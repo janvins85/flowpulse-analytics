@@ -61,7 +61,7 @@ npm run start
 Vercel URL:
 
 ```text
-TODO: doplnit po vytvoreni Vercel projektu
+https://flowpulse-insight.vercel.app/
 ```
 
 ## Data
