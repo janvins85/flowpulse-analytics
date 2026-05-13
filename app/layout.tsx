@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "FlowPulse Analytics",
-  description: "Demo dashboard pro analyzu casu, penez, kapacit a firemnich bottlenecku."
+  title: "FlowPulse Insight",
+  description: "Firemní rentgen z dat, která už máte."
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

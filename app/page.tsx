@@ -1,5 +1,5 @@
-import { FlowPulseDashboard } from "@/components/FlowPulseDashboard";
+import { FlowPulseInsight } from "@/components/FlowPulseInsight";
 
 export default function Page() {
-  return <FlowPulseDashboard />;
+  return <FlowPulseInsight />;
 }

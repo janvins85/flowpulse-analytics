@@ -11,7 +11,7 @@ export function formatNumber(value: number) {
 }
 
 export function riskLabel(level: string) {
-  if (level === "high") return "Vysoke riziko";
-  if (level === "medium") return "Stredni riziko";
-  return "Nizke riziko";
+  if (level === "vysoke") return "Vysoké riziko";
+  if (level === "stredni") return "Střední riziko";
+  return "Nízké riziko";
 }

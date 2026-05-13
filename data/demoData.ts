@@ -1,135 +1,426 @@
-export type RiskLevel = "high" | "medium" | "low";
+export type RiskLevel = "vysoke" | "stredni" | "nizke";
 
 export const demoData = {
-  company: "Demo Manufacturing Group",
-  generatedAt: "2026-05-13",
+  company: "Novák & Partneři s.r.o.",
+  field: "Velkoobchod, sklad a servisní tým",
+  period: "Ukázkové sledované období",
   kpiSummary: {
-    totalRevenueAtRisk: 18400000,
-    monthlyLossEstimate: 3260000,
-    hoursLostMonthly: 1480,
-    delayedOrders: 46,
-    overdueTasks: 83,
-    openTickets: 137,
-    capacityUtilization: 91,
-    predictedSavings: 2180000,
-    topBottleneckArea: "Warehouse & dispatch"
+    monthlyLossEstimate: 520000,
+    threatenedRevenue: 390000,
+    hoursLostMonthly: 1250,
+    estimatedSavings: 280000,
+    overdueWork: 64,
+    teamLoad: 84
   },
-  executiveSummary:
-    "Demo Manufacturing Group ztraci nejvice penez ve skladu, podpore a obchodnim follow-upu. Data ukazuji, ze cast prace nema vlastnika ani odhad, kapacity jsou rozlozene nerovnomerne a management vidi dopady az pozde. Tri hlavni bottlenecky generuji odhadovanou mesicni ztratu 3,26 mil. Kc.",
-  moneyLeaks: [
-    { area: "Sales", value: 720000, risk: "medium" as RiskLevel, note: "pomale follow-upy a stagnujici dealy" },
-    { area: "Warehouse", value: 1180000, risk: "high" as RiskLevel, note: "zpozdene expedice a opakovane chyby kompletace" },
-    { area: "Support", value: 540000, risk: "high" as RiskLevel, note: "SLA breach a prilis mnoho otevrenych ticketu" },
-    { area: "Internal processes", value: 490000, risk: "medium" as RiskLevel, note: "ukoly bez vlastnika a odhadu" },
-    { area: "Finance", value: 330000, risk: "low" as RiskLevel, note: "manualni kontrola vyjimek a zpozdene schvalovani" }
+  managementSummary:
+    "Ukázková firma aktuálně ztrácí nejvíce peněz ve skladu, obchodě a v nejasném řízení požadavků. Největší dopad má zpožděná expedice, pomalé navazování kontaktu s obchodními příležitostmi a nerovnoměrné vytížení lidí. Při odstranění tří hlavních úzkých míst lze odhadovat úsporu 280 000 Kč měsíčně.",
+  summaryHighlights: [
+    { label: "Hlavní problém", value: "Zpožděná expedice a nejasné odpovědnosti", tone: "red" },
+    { label: "Finanční dopad", value: "520 000 Kč měsíčně", tone: "amber" },
+    { label: "Doporučený první krok", value: "Zpřesnit odpovědnosti u požadavků a skladových úkolů", tone: "green" }
   ],
-  bottlenecks: [
-    { area: "Warehouse & dispatch", score: 94, level: "high" as RiskLevel, impact: "1,18 mil. Kc / mesic", signal: "46 zpozdenych expedic" },
-    { area: "Support desk", score: 88, level: "high" as RiskLevel, impact: "540 tis. Kc / mesic", signal: "31 SLA breached" },
-    { area: "Sales follow-up", score: 76, level: "medium" as RiskLevel, impact: "720 tis. Kc / mesic", signal: "18 stagnujicich dealu" },
-    { area: "Ownership & estimation", score: 71, level: "medium" as RiskLevel, impact: "490 tis. Kc / mesic", signal: "25 % prace bez vlastnika nebo odhadu" },
-    { area: "Finance approvals", score: 42, level: "low" as RiskLevel, impact: "330 tis. Kc / mesic", signal: "manualni vyjimky" }
+  keyFindings: [
+    {
+      title: "Sklad generuje největší ztrátu",
+      description:
+        "Zpožděné expedice a opakované chyby v přípravě objednávek způsobují odhadovanou ztrátu 145 000 Kč měsíčně.",
+      icon: "warehouse"
+    },
+    {
+      title: "Obchod reaguje pozdě",
+      description:
+        "Část obchodních příležitostí zůstává bez včasného kontaktu. Firma tím přichází o odhadované tržby ve výši 390 000 Kč.",
+      icon: "sales"
+    },
+    {
+      title: "Lidé nejsou vytíženi rovnoměrně",
+      description:
+        "Někteří pracovníci jsou přetížení, zatímco jinde zůstává volná kapacita. To komplikuje plánování práce.",
+      icon: "people"
+    },
+    {
+      title: "Chybí odpovědnost a odhady",
+      description:
+        "Část úkolů nemá jasně určenou odpovědnou osobu nebo odhad pracnosti, takže vedení nedokáže přesně predikovat termíny.",
+      icon: "responsibility"
+    }
   ],
+  moneyLossAreas: [
+    {
+      area: "Sklad a expedice",
+      monthlyLoss: 145000,
+      cause: "Zpožděné expedice a opakované chyby v přípravě objednávek",
+      measure: "Zavést denní kontrolu zpožděných objednávek a jasné předání mezi skladem a dopravou",
+      priority: "Vysoká",
+      risk: "vysoke" as RiskLevel
+    },
+    {
+      area: "Obchod",
+      monthlyLoss: 120000,
+      cause: "Pozdní reakce na obchodní příležitosti",
+      measure: "Nastavit připomínky pro včasné navázání kontaktu",
+      priority: "Vysoká",
+      risk: "vysoke" as RiskLevel
+    },
+    {
+      area: "Požadavky a podpora",
+      monthlyLoss: 98000,
+      cause: "Část požadavků je bez odpovědné osoby nebo po termínu",
+      measure: "Zavést pravidelnou kontrolu otevřených požadavků",
+      priority: "Střední",
+      risk: "stredni" as RiskLevel
+    },
+    {
+      area: "Interní procesy",
+      monthlyLoss: 87000,
+      cause: "Nejasný průběh práce a chybějící odhady pracnosti",
+      measure: "Doplnit odpovědné osoby a odhady k důležitým úkolům",
+      priority: "Střední",
+      risk: "stredni" as RiskLevel
+    },
+    {
+      area: "Finance a administrativa",
+      monthlyLoss: 70000,
+      cause: "Ruční schvalování a zpožděné administrativní kroky",
+      measure: "Zjednodušit schvalování opakujících se položek",
+      priority: "Nižší",
+      risk: "nizke" as RiskLevel
+    }
+  ],
+  processState: {
+    requestsWithoutResponsiblePerson: 24,
+    workWithoutEstimate: 38,
+    overdueTasks: 64,
+    exceededResolutionTime: 27,
+    averageDelayDays: 5.4,
+    recurringProblems: 18
+  },
   people: [
-    { name: "Anna Novak", department: "Sales", role: "Account Manager", plannedCapacity: 128, actualLoad: 156, tasks: 31, overdueTasks: 9, tasksWithoutEstimate: 6, overloadRisk: "high" as RiskLevel },
-    { name: "Marek Dvorak", department: "Sales", role: "Sales Operations", plannedCapacity: 120, actualLoad: 104, tasks: 23, overdueTasks: 4, tasksWithoutEstimate: 3, overloadRisk: "low" as RiskLevel },
-    { name: "Tereza Malik", department: "Warehouse", role: "Dispatch Lead", plannedCapacity: 132, actualLoad: 174, tasks: 38, overdueTasks: 13, tasksWithoutEstimate: 7, overloadRisk: "high" as RiskLevel },
-    { name: "Filip Urban", department: "Warehouse", role: "Inventory Planner", plannedCapacity: 136, actualLoad: 126, tasks: 27, overdueTasks: 5, tasksWithoutEstimate: 4, overloadRisk: "medium" as RiskLevel },
-    { name: "Sofia Hruba", department: "Support", role: "Service Desk Specialist", plannedCapacity: 124, actualLoad: 166, tasks: 42, overdueTasks: 14, tasksWithoutEstimate: 8, overloadRisk: "high" as RiskLevel },
-    { name: "David Kral", department: "IT", role: "Systems Analyst", plannedCapacity: 140, actualLoad: 118, tasks: 25, overdueTasks: 3, tasksWithoutEstimate: 4, overloadRisk: "low" as RiskLevel },
-    { name: "Nina Svobodova", department: "Finance", role: "Controller", plannedCapacity: 118, actualLoad: 134, tasks: 29, overdueTasks: 7, tasksWithoutEstimate: 5, overloadRisk: "medium" as RiskLevel },
-    { name: "Peter Lang", department: "HR", role: "People Operations", plannedCapacity: 112, actualLoad: 92, tasks: 18, overdueTasks: 2, tasksWithoutEstimate: 3, overloadRisk: "low" as RiskLevel }
+    {
+      name: "Petr Novák",
+      team: "Vedení",
+      role: "Jednatel",
+      plannedCapacity: 120,
+      actualLoad: 112,
+      openTasks: 18,
+      overdueTasks: 4,
+      tasksWithoutEstimate: 3,
+      risk: "nizke" as RiskLevel
+    },
+    {
+      name: "Jana Dvořáková",
+      team: "Obchod",
+      role: "Obchodní manažerka",
+      plannedCapacity: 128,
+      actualLoad: 154,
+      openTasks: 31,
+      overdueTasks: 11,
+      tasksWithoutEstimate: 6,
+      risk: "vysoke" as RiskLevel
+    },
+    {
+      name: "Martin Černý",
+      team: "Sklad",
+      role: "Vedoucí skladu",
+      plannedCapacity: 132,
+      actualLoad: 168,
+      openTasks: 36,
+      overdueTasks: 14,
+      tasksWithoutEstimate: 7,
+      risk: "vysoke" as RiskLevel
+    },
+    {
+      name: "Lucie Králová",
+      team: "Finance",
+      role: "Finanční kontrola",
+      plannedCapacity: 118,
+      actualLoad: 126,
+      openTasks: 22,
+      overdueTasks: 5,
+      tasksWithoutEstimate: 4,
+      risk: "stredni" as RiskLevel
+    },
+    {
+      name: "Tomáš Veselý",
+      team: "Servis",
+      role: "Servisní technik",
+      plannedCapacity: 130,
+      actualLoad: 151,
+      openTasks: 29,
+      overdueTasks: 9,
+      tasksWithoutEstimate: 5,
+      risk: "vysoke" as RiskLevel
+    },
+    {
+      name: "Eva Malá",
+      team: "Administrativa",
+      role: "Administrativa",
+      plannedCapacity: 112,
+      actualLoad: 96,
+      openTasks: 16,
+      overdueTasks: 2,
+      tasksWithoutEstimate: 3,
+      risk: "nizke" as RiskLevel
+    },
+    {
+      name: "David Svoboda",
+      team: "Provoz",
+      role: "Provozní koordinátor",
+      plannedCapacity: 136,
+      actualLoad: 138,
+      openTasks: 25,
+      overdueTasks: 6,
+      tasksWithoutEstimate: 4,
+      risk: "stredni" as RiskLevel
+    },
+    {
+      name: "Klára Němcová",
+      team: "Zákaznická podpora",
+      role: "Zákaznická péče",
+      plannedCapacity: 124,
+      actualLoad: 142,
+      openTasks: 33,
+      overdueTasks: 10,
+      tasksWithoutEstimate: 6,
+      risk: "stredni" as RiskLevel
+    }
   ],
   sales: {
-    leads: 284,
-    pipelineValue: 42600000,
-    stagnantDeals: 18,
-    averageFollowUpHours: 42,
-    lostOpportunities: 11,
-    estimatedLostMoney: 720000,
-    monthlyTrend: [
-      { month: "Jan", leads: 208, lost: 5, followUpHours: 28 },
-      { month: "Feb", leads: 226, lost: 7, followUpHours: 31 },
-      { month: "Mar", leads: 251, lost: 8, followUpHours: 36 },
-      { month: "Apr", leads: 269, lost: 10, followUpHours: 39 },
-      { month: "May", leads: 284, lost: 11, followUpHours: 42 }
+    activeOpportunities: 74,
+    openOpportunityValue: 2850000,
+    lateResponseOpportunities: 16,
+    averageResponseHours: 34,
+    estimatedLostRevenue: 390000,
+    trend: [
+      { month: "Leden", opportunities: 52, late: 8, responseHours: 22 },
+      { month: "Únor", opportunities: 57, late: 10, responseHours: 25 },
+      { month: "Březen", opportunities: 63, late: 12, responseHours: 29 },
+      { month: "Duben", opportunities: 70, late: 14, responseHours: 31 },
+      { month: "Květen", opportunities: 74, late: 16, responseHours: 34 }
     ]
   },
   warehouse: {
-    orders: 1260,
-    delayedShipments: 46,
-    errorRate: 4.8,
-    averageDispatchDays: 3.7,
-    topDelayReason: "Missing stock reservation before packing",
-    financialImpact: 1180000,
+    orders: 940,
+    delayedShipments: 42,
+    preparationErrorRate: 4.2,
+    averageDispatchDays: 3.4,
+    topDelayReason: "Chybějící rezervace zboží před přípravou objednávky",
+    financialImpact: 145000,
     reasons: [
-      { reason: "Missing reservation", count: 18 },
-      { reason: "Late picking", count: 13 },
-      { reason: "Carrier handover", count: 8 },
-      { reason: "Incorrect address", count: 4 },
-      { reason: "Quality hold", count: 3 }
+      { reason: "Chybějící rezervace", count: 16 },
+      { reason: "Pozdní příprava", count: 12 },
+      { reason: "Předání dopravci", count: 7 },
+      { reason: "Chybná adresa", count: 4 },
+      { reason: "Kontrola kvality", count: 3 }
     ]
   },
-  support: {
-    openTickets: 137,
-    slaBreached: 31,
-    averageResolutionHours: 38,
-    unassignedTickets: 19,
+  requests: {
+    openRequests: 118,
+    overdueRequests: 27,
+    requestsWithoutResponsiblePerson: 19,
+    averageResolutionHours: 36,
     byPriority: [
-      { priority: "Critical", count: 9 },
-      { priority: "High", count: 34 },
-      { priority: "Normal", count: 71 },
-      { priority: "Low", count: 23 }
+      { priority: "Vysoká", count: 28 },
+      { priority: "Střední", count: 62 },
+      { priority: "Nízká", count: 28 }
     ],
     trend: [
-      { week: "W01", created: 42, closed: 35 },
-      { week: "W02", created: 48, closed: 39 },
-      { week: "W03", created: 57, closed: 44 },
-      { week: "W04", created: 63, closed: 48 },
-      { week: "W05", created: 59, closed: 52 }
+      { week: "1. týden", created: 35, finished: 29 },
+      { week: "2. týden", created: 41, finished: 34 },
+      { week: "3. týden", created: 46, finished: 38 },
+      { week: "4. týden", created: 48, finished: 40 },
+      { week: "5. týden", created: 43, finished: 42 }
     ]
   },
   finance: {
-    monthlyLossEstimate: 3260000,
-    potentialSavings: 2180000,
-    recommendedActionsRoi: 3.4,
+    monthlyLossEstimate: 520000,
+    possibleSavings: 280000,
+    returnEstimate: "3,1×",
+    highestPriorityAreas: ["Sklad a expedice", "Obchod", "Požadavky bez odpovědné osoby"],
     lossesByArea: [
-      { area: "Warehouse", loss: 1180000 },
-      { area: "Sales", loss: 720000 },
-      { area: "Support", loss: 540000 },
-      { area: "Internal processes", loss: 490000 },
-      { area: "Finance", loss: 330000 }
+      { area: "Sklad", loss: 145000 },
+      { area: "Obchod", loss: 120000 },
+      { area: "Požadavky", loss: 98000 },
+      { area: "Procesy", loss: 87000 },
+      { area: "Finance", loss: 70000 }
     ]
   },
-  processHealth: {
-    tasksWithoutOwner: 37,
-    tasksWithoutEstimate: 52,
-    overdueTasks: 83,
-    slaBreached: 31,
-    averageDelayDays: 5.8
-  },
-  insightReport: [
-    "Nejvetsi unik penez je ve skladu kvuli zpozdenym expedicim.",
-    "Obchod ztraci prilezitosti kvuli pomalemu follow-upu.",
-    "Support tym je pretizeny, ale cast ticketu nema spravnou prioritu.",
-    "25 % ukolu nema vlastnika nebo odhad, coz znemoznuje predikci kapacit.",
-    "Pri odstraneni tri hlavnich bottlenecku lze odhadovat usporu 2,18 mil. Kc mesicne."
-  ],
   recommendations: [
-    { action: "Zavest SLA rizeni", owner: "Support Lead", expectedImpact: "snizeni SLA breach o 35 %", priority: "High" },
-    { action: "Upravit proces expedice", owner: "Operations Manager", expectedImpact: "zkraceni prumerne expedice o 1,1 dne", priority: "High" },
-    { action: "Automatizovat follow-upy v obchode", owner: "Sales Operations", expectedImpact: "rychlejsi reakce na leady o 24 hodin", priority: "Medium" },
-    { action: "Nastavit vlastniky a estimace", owner: "PMO", expectedImpact: "predikovatelnejsi kapacity", priority: "High" },
-    { action: "Zavest tydenni management review", owner: "COO", expectedImpact: "drivejsi eskalace bottlenecku", priority: "Medium" }
+    {
+      action: "Zkrátit dobu expedice ve skladu",
+      impact: "Snížení zpožděných expedic a menší počet opakovaných chyb",
+      difficulty: "Střední",
+      savings: 95000,
+      firstStep: "Každé ráno projít objednávky, které mohou zpozdit expedici."
+    },
+    {
+      action: "Zavést jasné odpovědnosti u požadavků",
+      impact: "Méně nevyřízené práce bez vlastníka a rychlejší rozhodování",
+      difficulty: "Nízká",
+      savings: 62000,
+      firstStep: "U každého otevřeného požadavku doplnit odpovědnou osobu."
+    },
+    {
+      action: "Nastavit pravidelné sledování úkolů po termínu",
+      impact: "Vedení uvidí zpoždění dříve, než se promítne do nákladů",
+      difficulty: "Nízká",
+      savings: 45000,
+      firstStep: "Jednou týdně projít seznam úkolů po termínu."
+    },
+    {
+      action: "Automatizovat připomínky u obchodních příležitostí",
+      impact: "Rychlejší reakce na zákazníky a menší ztráta obchodních příležitostí",
+      difficulty: "Střední",
+      savings: 54000,
+      firstStep: "Nastavit upozornění u příležitostí bez reakce delší než 24 hodin."
+    },
+    {
+      action: "Vyrovnat vytížení lidí mezi týmy",
+      impact: "Méně přetížení klíčových lidí a lepší využití volné kapacity",
+      difficulty: "Střední",
+      savings: 38000,
+      firstStep: "Porovnat skutečné vytížení týmů a přesunout opakovatelné úkoly."
+    },
+    {
+      action: "Zavést týdenní manažerský přehled",
+      impact: "Pravidelné rozhodování podle stejných čísel",
+      difficulty: "Nízká",
+      savings: 31000,
+      firstStep: "Vybrat pět hlavních ukazatelů pro vedení firmy."
+    }
   ],
   workItems: [
-    { id: "DMG-1042", type: "Order", area: "Warehouse", title: "Delayed dispatch for strategic customer", owner: "Tereza Malik", status: "Overdue", priority: "High", estimateHours: 10, ageDays: 7, financialImpact: 180000 },
-    { id: "DMG-1088", type: "Deal", area: "Sales", title: "Enterprise deal waiting for follow-up", owner: "Anna Novak", status: "At risk", priority: "High", estimateHours: null, ageDays: 12, financialImpact: 260000 },
-    { id: "DMG-1104", type: "Ticket", area: "Support", title: "Recurring invoice export issue", owner: "Sofia Hruba", status: "SLA breached", priority: "Critical", estimateHours: 6, ageDays: 5, financialImpact: 90000 },
-    { id: "DMG-1121", type: "Task", area: "Internal processes", title: "No owner assigned for approval workflow", owner: null, status: "Open", priority: "Normal", estimateHours: null, ageDays: 18, financialImpact: 70000 },
-    { id: "DMG-1136", type: "Order", area: "Warehouse", title: "Picking error root cause analysis", owner: "Filip Urban", status: "Active", priority: "Normal", estimateHours: 8, ageDays: 4, financialImpact: 45000 },
-    { id: "DMG-1149", type: "Finance", area: "Finance", title: "Manual exception approval backlog", owner: "Nina Svobodova", status: "Overdue", priority: "High", estimateHours: 12, ageDays: 9, financialImpact: 120000 },
-    { id: "DMG-1160", type: "Ticket", area: "Support", title: "Unassigned priority routing issue", owner: null, status: "Open", priority: "High", estimateHours: null, ageDays: 6, financialImpact: 65000 },
-    { id: "DMG-1187", type: "HR", area: "HR", title: "Capacity planning data missing for onboarding", owner: "Peter Lang", status: "Active", priority: "Normal", estimateHours: 5, ageDays: 3, financialImpact: 30000 }
+    {
+      id: "NP-1042",
+      type: "Objednávka",
+      area: "Sklad",
+      title: "Zpožděná expedice pro důležitého zákazníka",
+      responsiblePerson: "Martin Černý",
+      status: "Po termínu",
+      priority: "Vysoká",
+      workEstimateHours: 10,
+      ageDays: 7,
+      financialImpact: 48000
+    },
+    {
+      id: "NP-1088",
+      type: "Obchodní příležitost",
+      area: "Obchod",
+      title: "Příležitost čeká na navázání kontaktu",
+      responsiblePerson: "Jana Dvořáková",
+      status: "Ohroženo",
+      priority: "Vysoká",
+      workEstimateHours: null,
+      ageDays: 12,
+      financialImpact: 82000
+    },
+    {
+      id: "NP-1104",
+      type: "Požadavek",
+      area: "Zákaznická podpora",
+      title: "Opakovaný problém s vystavením dokladu",
+      responsiblePerson: "Klára Němcová",
+      status: "Překročený termín",
+      priority: "Vysoká",
+      workEstimateHours: 6,
+      ageDays: 5,
+      financialImpact: 26000
+    },
+    {
+      id: "NP-1121",
+      type: "Úkol",
+      area: "Interní procesy",
+      title: "Schvalování výjimek nemá jasnou odpovědnou osobu",
+      responsiblePerson: null,
+      status: "Otevřeno",
+      priority: "Střední",
+      workEstimateHours: null,
+      ageDays: 18,
+      financialImpact: 34000
+    },
+    {
+      id: "NP-1136",
+      type: "Objednávka",
+      area: "Sklad",
+      title: "Opakovaná chyba v přípravě objednávky",
+      responsiblePerson: "David Svoboda",
+      status: "Řeší se",
+      priority: "Střední",
+      workEstimateHours: 8,
+      ageDays: 4,
+      financialImpact: 22000
+    },
+    {
+      id: "NP-1149",
+      type: "Finance",
+      area: "Finance",
+      title: "Zpožděné schválení ručních oprav",
+      responsiblePerson: "Lucie Králová",
+      status: "Po termínu",
+      priority: "Vysoká",
+      workEstimateHours: 12,
+      ageDays: 9,
+      financialImpact: 41000
+    },
+    {
+      id: "NP-1160",
+      type: "Požadavek",
+      area: "Servis",
+      title: "Požadavek bez odpovědné osoby",
+      responsiblePerson: null,
+      status: "Otevřeno",
+      priority: "Vysoká",
+      workEstimateHours: null,
+      ageDays: 6,
+      financialImpact: 18000
+    },
+    {
+      id: "NP-1187",
+      type: "Úkol",
+      area: "Administrativa",
+      title: "Chybí plán kapacit pro sezonní nárůst práce",
+      responsiblePerson: "Eva Malá",
+      status: "Řeší se",
+      priority: "Střední",
+      workEstimateHours: 5,
+      ageDays: 3,
+      financialImpact: 15000
+    }
+  ],
+  audience: [
+    "Menší a střední firmy",
+    "Obchodní společnosti",
+    "Sklady a logistika",
+    "Výrobní firmy",
+    "Servisní týmy",
+    "Firmy s rostoucím počtem požadavků",
+    "Firmy, které mají data v Excelu, CRM, ERP nebo jiných systémech, ale neumí je využít pro řízení"
+  ],
+  cooperationSteps: [
+    {
+      title: "Podíváme se na dostupná data",
+      description:
+        "Nemusíte měnit své systémy. Pracujeme s tím, co už používáte - Excel, účetní systém, CRM, skladový systém, zákaznickou podporu nebo jiné dostupné zdroje."
+    },
+    {
+      title: "Vytvoříme srozumitelný přehled",
+      description:
+        "Data převedeme do manažerského přehledu, kterému rozumí vedení i běžní vedoucí týmů."
+    },
+    {
+      title: "Najdeme úzká místa",
+      description:
+        "Ukážeme, kde vznikají zdržení, ztráty, přetížení lidí nebo nejasnosti v odpovědnosti."
+    },
+    {
+      title: "Navrhneme konkrétní řešení",
+      description:
+        "Výstupem nejsou jen grafy, ale konkrétní doporučení, co změnit a v jakém pořadí."
+    },
+    {
+      title: "Měříme dopad změn",
+      description:
+        "Po zavedení opatření lze pravidelně sledovat, jestli se situace zlepšuje."
+    }
   ]
 };

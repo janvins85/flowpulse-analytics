@@ -1,21 +1,35 @@
-# FlowPulse Analytics
+# FlowPulse Insight
 
-FlowPulse Analytics je prezencni/demo webova aplikace pro obchodni ukazku firemni analytiky. Ukazuje, kde ve firme utika cas, penize a kapacita: bottlenecky v obchodu, skladu, supportu, financich, procesech a vytizeni lidi.
+FlowPulse Insight je demo webové aplikace pro službu firemní datové analýzy. Ukazuje, kde firma ztrácí peníze, čas a kapacitu lidí, které procesy se zdržují a kde má změna největší praktický dopad.
 
-Demo je postavene podle principu dashboardu `sprint-review-dashboard`: KPI karty, manazerske shrnuti, grafy, rizikove oblasti, kategorie, doporuceni a detailni datova tabulka. Obsah je ale kompletne oddeleny od internich dat a nepouziva zadne realne firemni nazvy, osoby, tokeny ani napojeni.
+Projekt je určený jako obchodní ukázka pro menší a střední firmy, které chtějí využít data, která už mají, ale nepotřebují složitý korporátní reporting ani další nástroj na ruční vyplňování.
 
-## Demo scenar
+## Demo scénář
 
-Aplikace simuluje fiktivni firmu **Demo Manufacturing Group**, ktera resi:
+Aplikace používá čistě fiktivní data firmy **Novák & Partneři s.r.o.** z oboru velkoobchod, sklad a servisní tým.
 
-- obchod nestiha follow-upy,
-- sklad ma zpozdene expedice,
-- support ma vysoky pocet otevrenych ticketu,
-- lide jsou nerovnomerne vytizeni,
-- cast prace nema vlastnika,
-- cast ukolu nema odhad,
-- nektere procesy maji vysoky financni dopad,
-- management nevidi, kde presne vznikaji ztraty.
+Ukázka řeší:
+
+- zpožděné expedice,
+- pomalou reakci na obchodní příležitosti,
+- nerovnoměrné vytížení lidí,
+- požadavky bez odpovědné osoby,
+- úkoly bez odhadu pracnosti,
+- úkoly po termínu,
+- odhad finančních dopadů,
+- doporučené kroky ke zlepšení.
+
+V projektu nejsou žádná reálná firemní data, reálná jména lidí, interní názvy systémů, tokeny ani napojení na skutečné služby.
+
+## Pro koho je FlowPulse Insight
+
+- menší a střední firmy,
+- obchodní společnosti,
+- sklady a logistika,
+- výrobní firmy,
+- servisní týmy,
+- firmy s rostoucím počtem požadavků,
+- firmy, které mají data v Excelu, CRM, ERP nebo jiných systémech, ale neumí je využít pro řízení.
 
 ## Technologie
 
@@ -24,39 +38,39 @@ Aplikace simuluje fiktivni firmu **Demo Manufacturing Group**, ktera resi:
 - TypeScript
 - Tailwind CSS
 - Recharts
-- staticka demo data v `data/demoData.ts`
+- statická demo data v `data/demoData.ts`
 - bez backendu
-- bez API tokenu
-- pripraveno pro Vercel
+- bez API tokenů
+- připraveno pro Vercel
 
-## Spusteni lokalne
+## Spuštění lokálně
 
 ```bash
 npm install
 npm run dev
 ```
 
-Potom otevri:
+Potom otevřete:
 
 ```text
 http://localhost:3000
 ```
 
-Produkci lze overit prikazem:
+Produkční build lze ověřit příkazem:
 
 ```bash
 npm run build
 npm run start
 ```
 
-## Deploy na Vercel
+## Nasazení na Vercel
 
-1. Vytvor GitHub repozitar `flowpulse-analytics`.
-2. Pushni tento projekt do `main` branche.
-3. Ve Vercelu zvol **Add New Project**.
-4. Vyber GitHub repozitar `flowpulse-analytics`.
-5. Framework preset: **Next.js**.
-6. Deploy bez environment variables.
+1. Připojte GitHub repozitář `flowpulse-analytics`.
+2. Ve Vercelu zvolte **Add New Project**.
+3. Vyberte framework preset **Next.js**.
+4. Build command ponechte `npm run build`.
+5. Install command ponechte `npm install`.
+6. Environment variables nejsou potřeba.
 
 Vercel URL:
 
@@ -64,24 +78,18 @@ Vercel URL:
 https://flowpulse-insight.vercel.app/
 ```
 
-## Data
+## Možné budoucí konektory
 
-Vsechna data jsou fiktivni a slouzi pouze pro demo. Projekt neobsahuje realna firemni data, realna jmena lidi, interni nazvy systemu, API tokeny ani napojeni na skutecne sluzby.
-
-## Budouci mozne konektory
-
+- Excel / CSV
 - CRM
 - ERP
-- Helpdesk
-- Jira
-- Azure DevOps
-- Excel / CSV
-- skladovy system
-- ucetni system
+- skladový systém
+- účetní systém
+- helpdesk
+- plánování práce
+- e-shop
 
 ## GitHub
-
-Planovany repozitar:
 
 ```text
 https://github.com/janvins85/flowpulse-analytics
