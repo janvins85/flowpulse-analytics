@@ -4,15 +4,14 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "FlowLens — Firemní rentgen z dat",
   description:
-    "FlowLens pomáhá malým a středním firmám zjistit, kde ztrácí čas, peníze a kapacitu lidí. Srozumitelný manažerský přehled nad daty, která už máte.",
+    "FlowLens pomáhá firmám zjistit, kde ztrácí čas, peníze a kapacitu lidí. Srozumitelný manažerský přehled nad daty, která už máte.",
   keywords: [
     "firemní rentgen",
     "datová analytika",
     "audit procesů",
     "firemní data",
-    "úspory ve firmě",
-    "procesní analýza",
     "manažerský přehled",
+    "procesní analýza",
     "FlowLens"
   ]
 };

@@ -23,26 +23,31 @@ export const demoData = {
     {
       title: "Zpožděné expedice",
       amount: 145000,
+      priority: "Vysoká",
       explanation: "Objednávky odcházejí později, než zákazníci očekávají, a firma řeší více urgencí i kompenzací."
     },
     {
       title: "Pomalá reakce obchodu",
       amount: 390000,
+      priority: "Vysoká",
       explanation: "Část obchodních příležitostí čeká příliš dlouho na navázání kontaktu a postupně chladne."
     },
     {
       title: "Přetížení podpory",
       amount: 80000,
+      priority: "Střední",
       explanation: "Požadavky se hromadí u několika lidí a běžná agenda se dostává po termínu."
     },
     {
       title: "Nejasná odpovědnost",
       amount: 60000,
+      priority: "Střední",
       explanation: "Některé úkoly nemají jasně určenou odpovědnou osobu, takže se zbytečně čeká."
     },
     {
       title: "Úkoly bez odhadu",
       amount: 45000,
+      priority: "Nízká",
       explanation: "Vedení nevidí, kolik práce je skutečně před týmem, a neumí spolehlivě plánovat termíny."
     }
   ],
@@ -275,9 +280,10 @@ export const demoData = {
   causes: [
     "Chybí jasná odpovědnost.",
     "Úkoly nemají odhad pracnosti.",
-    "Lidé jsou přetížení nerovnoměrně.",
-    "Chybí přehled o prioritách.",
-    "Procesy nejsou pravidelně vyhodnocovány."
+    "Lidé jsou přetíženi nerovnoměrně.",
+    "Vedení nemá jednotný přehled.",
+    "Procesy nejsou pravidelně vyhodnocovány.",
+    "Důležité informace zůstávají v různých systémech."
   ],
   impactScenarios: [
     {
@@ -295,7 +301,7 @@ export const demoData = {
   ],
   recommendations: [
     {
-      action: "Zkrátit dobu expedice ve skladu",
+      action: "Zkrátit dobu expedice",
       impact: "Snížení zpožděných expedic a menší počet opakovaných chyb",
       difficulty: "Střední",
       savings: 120000,
@@ -303,7 +309,7 @@ export const demoData = {
       firstStep: "Zmapovat proces expedice a určit, kde nejčastěji vzniká zdržení."
     },
     {
-      action: "Zavést jasné odpovědnosti u požadavků",
+      action: "Zavést jasné odpovědnosti",
       impact: "Méně nevyřízené práce bez vlastníka a rychlejší rozhodování",
       difficulty: "Nízká",
       savings: 62000,
@@ -311,15 +317,7 @@ export const demoData = {
       firstStep: "U každého otevřeného požadavku doplnit odpovědnou osobu."
     },
     {
-      action: "Nastavit pravidelné sledování úkolů po termínu",
-      impact: "Vedení uvidí zpoždění dříve, než se promítne do nákladů",
-      difficulty: "Nízká",
-      savings: 45000,
-      priority: "Střední",
-      firstStep: "Jednou týdně projít seznam úkolů po termínu."
-    },
-    {
-      action: "Automatizovat připomínky u obchodních příležitostí",
+      action: "Automatizovat připomínky obchodních příležitostí",
       impact: "Rychlejší reakce na zákazníky a menší ztráta obchodních příležitostí",
       difficulty: "Střední",
       savings: 54000,
@@ -327,7 +325,15 @@ export const demoData = {
       firstStep: "Nastavit upozornění u příležitostí bez reakce delší než 24 hodin."
     },
     {
-      action: "Vyrovnat vytížení lidí mezi týmy",
+      action: "Zavést pravidelný manažerský přehled",
+      impact: "Pravidelné rozhodování podle stejných čísel",
+      difficulty: "Nízká",
+      savings: 45000,
+      priority: "Střední",
+      firstStep: "Vybrat pět hlavních ukazatelů pro vedení firmy."
+    },
+    {
+      action: "Vyrovnat vytížení lidí",
       impact: "Méně přetížení klíčových lidí a lepší využití volné kapacity",
       difficulty: "Střední",
       savings: 38000,
@@ -335,12 +341,12 @@ export const demoData = {
       firstStep: "Porovnat skutečné vytížení týmů a přesunout opakovatelné úkoly."
     },
     {
-      action: "Zavést týdenní manažerský přehled",
-      impact: "Pravidelné rozhodování podle stejných čísel",
+      action: "Sjednotit pohled na data",
+      impact: "Vedení uvidí provoz, peníze a kapacitu lidí v jednom srozumitelném pohledu",
       difficulty: "Nízká",
       savings: 31000,
       priority: "Nízká",
-      firstStep: "Vybrat pět hlavních ukazatelů pro vedení firmy."
+      firstStep: "Vybrat zdroje dat, které mají největší vliv na každodenní rozhodování."
     }
   ],
   workItems: [
@@ -450,22 +456,22 @@ export const demoData = {
   ],
   cooperationSteps: [
     {
-      title: "Podíváme se na vaše data",
+      title: "Podíváme se na dostupná data",
       description:
-        "Nemusíte měnit své systémy. Pracujeme s tím, co už používáte - Excel, účetní systém, CRM, skladový systém, zákaznickou podporu nebo jiné dostupné zdroje."
+        "Nemusíte měnit své systémy. Pracujeme s tím, co už používáte – Excel, účetní systém, CRM, skladový systém, zákaznickou podporu nebo jiné dostupné zdroje."
     },
     {
-      title: "Vytvoříme přehled",
+      title: "Vytvoříme srozumitelný přehled",
       description:
         "Data převedeme do manažerského přehledu, kterému rozumí vedení i běžní vedoucí týmů."
     },
     {
-      title: "Najdeme problémy",
+      title: "Najdeme úzká místa a ztráty",
       description:
         "Ukážeme, kde vznikají zdržení, ztráty, přetížení lidí nebo nejasnosti v odpovědnosti."
     },
     {
-      title: "Navrhneme řešení",
+      title: "Navrhneme konkrétní doporučení",
       description:
         "Výstupem nejsou jen grafy, ale konkrétní doporučení, co změnit a v jakém pořadí."
     }

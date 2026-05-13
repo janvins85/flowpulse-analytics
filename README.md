@@ -25,6 +25,10 @@ Projekt používá fiktivní demo data ukázkové firmy **Novák & Partneři s.r
 
 V projektu nejsou žádná reálná firemní data, reálná jména lidí, interní názvy systémů, tokeny ani napojení na skutečné služby.
 
+## Bezpečnost dat
+
+FlowLens je v této podobě prezentační demo nad fiktivními daty. Při budoucím napojení na reálná data počítá s tím, že data zůstávají pod kontrolou klienta, používají se pouze pro dohodnutou analýzu a lze pracovat i s anonymizovaným nebo omezeným rozsahem dat.
+
 ## Jak demo použít
 
 Demo je připravené pro reálné posílání potenciálním klientům a pro obchodní prezentaci služby.
@@ -112,6 +116,6 @@ V budoucnu lze doplnit napojení na reálná data. Doporučený postup:
 - ERP
 - skladový systém
 - účetní systém
-- helpdesk
+- zákaznická podpora
 - plánování práce
 - e-shop

@@ -7,12 +7,17 @@ import {
   Coins,
   Eye,
   Factory,
+  FolderLock,
   Gauge,
   LineChart,
+  LockKeyhole,
   PackageCheck,
+  Settings2,
+  ShieldCheck,
   Target,
   TrendingUp,
-  Users
+  Users,
+  UsersRound
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { demoData, type RiskLevel } from "@/data/demoData";
@@ -224,7 +229,11 @@ export function FlowLens() {
               </a>
             </div>
             <div className="mt-7 grid gap-3 text-sm text-slate-300 sm:grid-cols-3">
-              {["Pro malé a střední firmy", "Funguje s daty z Excelu, CRM i skladových systémů", "Výstup obvykle do 14 dnů"].map((item) => (
+              {[
+                "Pro malé a střední firmy",
+                "Funguje nad daty z Excelu, CRM i skladových systémů",
+                "První výstup obvykle do 10–14 dnů"
+              ].map((item) => (
                 <div key={item} className="flex items-start gap-2 rounded-[8px] border border-slate-700 bg-slate-900/80 p-3">
                   <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-300" />
                   <span>{item}</span>
@@ -245,7 +254,7 @@ export function FlowLens() {
         id="prehled"
         eyebrow="1. Co se ve firmě děje"
         title="Co firmu stojí nejvíc"
-        subtitle="Tady začíná firemní rentgen: pět problémů, které mají v ukázkové firmě Novák & Partneři s.r.o. největší dopad na peníze, čas a kapacitu lidí."
+        subtitle="Ukázka oblastí, kde firmy nejčastěji přichází o čas, peníze nebo výkon."
         className="pb-6"
       >
         <div className="grid gap-3">
@@ -255,7 +264,10 @@ export function FlowLens() {
                 {index + 1}
               </div>
               <div>
-                <h3 className="text-lg font-black text-white">{problem.title}</h3>
+                <div className="mb-2 flex flex-wrap items-center gap-2">
+                  <h3 className="text-lg font-black text-white">{problem.title}</h3>
+                  <PriorityBadge priority={problem.priority} />
+                </div>
                 <p className="mt-1 text-sm leading-6 text-slate-300">{problem.explanation}</p>
               </div>
               <div className="text-left md:text-right">
@@ -271,7 +283,7 @@ export function FlowLens() {
         <div className="rounded-[8px] border border-slate-700 bg-slate-900 p-6">
           <p className="text-lg leading-8 text-slate-200">
             FlowLens není další systém, který musí lidé ve firmě složitě vyplňovat. Je to srozumitelný pohled nad daty,
-            která už ve firmě vznikají — z Excelu, CRM, účetního systému, skladu, helpdesku nebo jiných nástrojů.
+            která už ve firmě vznikají — z Excelu, CRM, účetního systému, skladu, zákaznické podpory nebo jiných nástrojů.
           </p>
           <p className="mt-4 text-lg leading-8 text-slate-200">
             Pomáhá vedení rychle pochopit, kde vznikají ztráty, zdržení, přetížení lidí a nejasnosti v odpovědnosti.
@@ -350,6 +362,9 @@ export function FlowLens() {
             <p className="text-lg leading-8 text-slate-200">
               Tohle je místo, kde má změna největší dopad. Problém obvykle není v jednom člověku, ale v tom, že vedení
               nemá jednoduchý pohled na odpovědnosti, priority a přetížení týmů.
+            </p>
+            <p className="mt-4 text-base leading-7 text-slate-300">
+              Většina firem tato místa nevidí, protože data existují odděleně a chybí nad nimi společný pohled.
             </p>
           </div>
           <div className="grid gap-3">
@@ -565,6 +580,9 @@ export function FlowLens() {
                 </div>
               ))}
             </div>
+            <div className="mt-5 rounded-[8px] border border-blue-400/25 bg-blue-500/10 p-4 text-sm font-semibold leading-6 text-blue-50">
+              Začít lze i malým pilotem nad jednou konkrétní oblastí firmy.
+            </div>
           </div>
         </div>
       </Section>
@@ -631,6 +649,47 @@ export function FlowLens() {
                 <span>{item}</span>
               </div>
             ))}
+          </div>
+        </div>
+      </Section>
+
+      <Section
+        title="Jak pracujeme s vašimi daty"
+        subtitle="Bezpečnost a důvěra jsou základ celé spolupráce."
+      >
+        <div className="grid gap-5 lg:grid-cols-[1fr_0.9fr]">
+          <div className="rounded-[8px] border border-slate-700 bg-slate-900 p-6">
+            <p className="text-lg font-black text-white">Vaše data zůstávají vždy pod vaší kontrolou.</p>
+            <p className="mt-4 text-base leading-8 text-slate-200">
+              FlowLens pracuje pouze s daty, která sami poskytnete, a výhradně za účelem analýzy pro vaši firmu. Data
+              nikdy neposkytujeme třetím stranám, nesdílíme je s jinými klienty a nepoužíváme je pro žádné jiné účely.
+            </p>
+            <p className="mt-4 text-base leading-8 text-slate-200">
+              Přístup k datům je omezený, zabezpečený a vždy nastavený individuálně podle konkrétní spolupráce.
+            </p>
+            <p className="mt-4 text-base leading-8 text-slate-200">
+              Pokud preferujete, lze pracovat také s anonymizovanými nebo omezenými daty.
+            </p>
+            <p className="mt-5 rounded-[8px] border border-blue-400/20 bg-blue-500/10 p-4 text-sm leading-6 text-blue-100">
+              FlowLens nevytváří kopie dat nad rámec potřebné analýzy a neslouží jako externí úložiště firemních informací.
+            </p>
+          </div>
+          <div className="grid gap-3">
+            {[
+              { label: "Vaše data zůstávají u vás", icon: ShieldCheck },
+              { label: "Přístup pouze pro účely analýzy", icon: LockKeyhole },
+              { label: "Možnost anonymizace dat", icon: FolderLock },
+              { label: "Data nejsou sdílena s třetími stranami", icon: UsersRound },
+              { label: "Individuální nastavení přístupů", icon: Settings2 }
+            ].map((item) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.label} className="flex items-start gap-3 rounded-[8px] border border-slate-700 bg-slate-900 p-4 text-slate-200">
+                  <Icon className="mt-0.5 h-5 w-5 shrink-0 text-blue-300" />
+                  <span className="font-semibold">{item.label}</span>
+                </div>
+              );
+            })}
           </div>
         </div>
       </Section>
