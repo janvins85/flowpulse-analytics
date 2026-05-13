@@ -1,35 +1,41 @@
 # FlowPulse Insight
 
-FlowPulse Insight je demo webové aplikace pro službu firemní datové analýzy. Ukazuje, kde firma ztrácí peníze, čas a kapacitu lidí, které procesy se zdržují a kde má změna největší praktický dopad.
+FlowPulse Insight je demo firemního rentgenu: srozumitelná ukázka služby, která z dostupných firemních dat rychle ukáže, kde firma ztrácí peníze, čas a kapacitu lidí.
 
-Projekt je určený jako obchodní ukázka pro menší a střední firmy, které chtějí využít data, která už mají, ale nepotřebují složitý korporátní reporting ani další nástroj na ruční vyplňování.
+Ukázka je postavená jako příběh pro vedení firmy:
 
-## Demo scénář
+1. Co se ve firmě děje.
+2. Kde jsou problémy.
+3. Kolik to stojí.
+4. Proč to vzniká.
+5. Co s tím dělat.
 
-Aplikace používá čistě fiktivní data firmy **Novák & Partneři s.r.o.** z oboru velkoobchod, sklad a servisní tým.
+Nejde o účetní audit ani složitý reporting. Cílem je prakticky ukázat, kde má změna největší dopad.
 
-Ukázka řeší:
+## Pro koho je demo
 
-- zpožděné expedice,
-- pomalou reakci na obchodní příležitosti,
-- nerovnoměrné vytížení lidí,
-- požadavky bez odpovědné osoby,
-- úkoly bez odhadu pracnosti,
-- úkoly po termínu,
-- odhad finančních dopadů,
-- doporučené kroky ke zlepšení.
+- firmy 5-200 lidí,
+- obchodní firmy,
+- sklady a logistika,
+- servisní týmy,
+- firmy s daty v Excelu nebo systému,
+- majitelé, jednatelé, provozní manažeři a vedoucí týmů.
+
+## Demo data
+
+Aplikace používá čistě fiktivní data firmy **Novák & Partneři s.r.o.** z oblasti velkoobchodu, skladu a servisního týmu.
 
 V projektu nejsou žádná reálná firemní data, reálná jména lidí, interní názvy systémů, tokeny ani napojení na skutečné služby.
 
-## Pro koho je FlowPulse Insight
+## Jak demo použít
 
-- menší a střední firmy,
-- obchodní společnosti,
-- sklady a logistika,
-- výrobní firmy,
-- servisní týmy,
-- firmy s rostoucím počtem požadavků,
-- firmy, které mají data v Excelu, CRM, ERP nebo jiných systémech, ale neumí je využít pro řízení.
+Demo je připravené pro obchodní prezentaci. Doporučený scénář:
+
+1. Začněte sekcí **Co firmu stojí nejvíc**.
+2. Ukažte finanční dopady v korunách.
+3. Vysvětlete, proč problémy vznikají.
+4. Projděte doporučené kroky.
+5. Uzavřete otázkou, jaká data má zákazník dnes k dispozici.
 
 ## Technologie
 
@@ -37,7 +43,6 @@ V projektu nejsou žádná reálná firemní data, reálná jména lidí, intern
 - React
 - TypeScript
 - Tailwind CSS
-- Recharts
 - statická demo data v `data/demoData.ts`
 - bez backendu
 - bez API tokenů
@@ -78,7 +83,16 @@ Vercel URL:
 https://flowpulse-insight.vercel.app/
 ```
 
-## Možné budoucí konektory
+## Jak projekt rozšířit
+
+V budoucnu lze doplnit napojení na reálná data. Doporučený postup:
+
+1. Zachovat demo data jako bezpečný prezentační režim.
+2. Přidat samostatnou datovou vrstvu pro reálné zdroje.
+3. Převést reálná data do stejné struktury jako `data/demoData.ts`.
+4. Citlivé údaje držet mimo repozitář a používat proměnné prostředí.
+
+## Možné budoucí zdroje dat
 
 - Excel / CSV
 - CRM

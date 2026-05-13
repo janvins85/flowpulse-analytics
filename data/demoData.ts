@@ -5,7 +5,7 @@ export const demoData = {
   field: "Velkoobchod, sklad a servisní tým",
   period: "Ukázkové sledované období",
   kpiSummary: {
-    monthlyLossEstimate: 520000,
+    monthlyLossEstimate: 420000,
     threatenedRevenue: 390000,
     hoursLostMonthly: 1250,
     estimatedSavings: 280000,
@@ -13,11 +13,38 @@ export const demoData = {
     teamLoad: 84
   },
   managementSummary:
-    "Ukázková firma aktuálně ztrácí nejvíce peněz ve skladu, obchodě a v nejasném řízení požadavků. Největší dopad má zpožděná expedice, pomalé navazování kontaktu s obchodními příležitostmi a nerovnoměrné vytížení lidí. Při odstranění tří hlavních úzkých míst lze odhadovat úsporu 280 000 Kč měsíčně.",
+    "Ukázková firma aktuálně přichází přibližně o 420 000 Kč měsíčně. Největší dopad má zpožděná expedice, pomalá reakce obchodu a nerovnoměrné vytížení lidí. Při odstranění těchto tří oblastí lze výrazně zlepšit výkon firmy během několika týdnů.",
   summaryHighlights: [
     { label: "Hlavní problém", value: "Zpožděná expedice a nejasné odpovědnosti", tone: "red" },
-    { label: "Finanční dopad", value: "520 000 Kč měsíčně", tone: "amber" },
+    { label: "Finanční dopad", value: "420 000 Kč měsíčně", tone: "amber" },
     { label: "Doporučený první krok", value: "Zpřesnit odpovědnosti u požadavků a skladových úkolů", tone: "green" }
+  ],
+  topProblems: [
+    {
+      title: "Zpožděné expedice",
+      amount: 145000,
+      explanation: "Objednávky odcházejí později, než zákazníci očekávají, a firma řeší více urgencí i kompenzací."
+    },
+    {
+      title: "Pomalá reakce obchodu",
+      amount: 390000,
+      explanation: "Část obchodních příležitostí čeká příliš dlouho na navázání kontaktu a postupně chladne."
+    },
+    {
+      title: "Přetížení podpory",
+      amount: 80000,
+      explanation: "Požadavky se hromadí u několika lidí a běžná agenda se dostává po termínu."
+    },
+    {
+      title: "Nejasná odpovědnost",
+      amount: 60000,
+      explanation: "Některé úkoly nemají jasně určenou odpovědnou osobu, takže se zbytečně čeká."
+    },
+    {
+      title: "Úkoly bez odhadu",
+      amount: 45000,
+      explanation: "Vedení nevidí, kolik práce je skutečně před týmem, a neumí spolehlivě plánovat termíny."
+    }
   ],
   keyFindings: [
     {
@@ -56,7 +83,7 @@ export const demoData = {
     },
     {
       area: "Obchod",
-      monthlyLoss: 120000,
+      monthlyLoss: 390000,
       cause: "Pozdní reakce na obchodní příležitosti",
       measure: "Nastavit připomínky pro včasné navázání kontaktu",
       priority: "Vysoká",
@@ -64,7 +91,7 @@ export const demoData = {
     },
     {
       area: "Požadavky a podpora",
-      monthlyLoss: 98000,
+      monthlyLoss: 80000,
       cause: "Část požadavků je bez odpovědné osoby nebo po termínu",
       measure: "Zavést pravidelnou kontrolu otevřených požadavků",
       priority: "Střední",
@@ -72,7 +99,7 @@ export const demoData = {
     },
     {
       area: "Interní procesy",
-      monthlyLoss: 87000,
+      monthlyLoss: 60000,
       cause: "Nejasný průběh práce a chybějící odhady pracnosti",
       measure: "Doplnit odpovědné osoby a odhady k důležitým úkolům",
       priority: "Střední",
@@ -80,7 +107,7 @@ export const demoData = {
     },
     {
       area: "Finance a administrativa",
-      monthlyLoss: 70000,
+      monthlyLoss: 45000,
       cause: "Ruční schvalování a zpožděné administrativní kroky",
       measure: "Zjednodušit schvalování opakujících se položek",
       priority: "Nižší",
@@ -233,31 +260,54 @@ export const demoData = {
     ]
   },
   finance: {
-    monthlyLossEstimate: 520000,
+    monthlyLossEstimate: 420000,
     possibleSavings: 280000,
     returnEstimate: "3,1×",
     highestPriorityAreas: ["Sklad a expedice", "Obchod", "Požadavky bez odpovědné osoby"],
     lossesByArea: [
       { area: "Sklad", loss: 145000 },
-      { area: "Obchod", loss: 120000 },
-      { area: "Požadavky", loss: 98000 },
-      { area: "Procesy", loss: 87000 },
-      { area: "Finance", loss: 70000 }
+      { area: "Obchod", loss: 390000 },
+      { area: "Požadavky", loss: 80000 },
+      { area: "Procesy", loss: 60000 },
+      { area: "Finance", loss: 45000 }
     ]
   },
+  causes: [
+    "Chybí jasná odpovědnost.",
+    "Úkoly nemají odhad pracnosti.",
+    "Lidé jsou přetížení nerovnoměrně.",
+    "Chybí přehled o prioritách.",
+    "Procesy nejsou pravidelně vyhodnocovány."
+  ],
+  impactScenarios: [
+    {
+      change: "Pokud zkrátíte dobu expedice o 30 %",
+      result: "ušetříte přibližně 120 000 Kč měsíčně"
+    },
+    {
+      change: "Pokud zrychlíte reakci obchodu o 2 dny",
+      result: "můžete zvýšit tržby až o 15 %"
+    },
+    {
+      change: "Pokud vyrovnáte vytížení týmu",
+      result: "snížíte zpoždění o 40 %"
+    }
+  ],
   recommendations: [
     {
       action: "Zkrátit dobu expedice ve skladu",
       impact: "Snížení zpožděných expedic a menší počet opakovaných chyb",
       difficulty: "Střední",
-      savings: 95000,
-      firstStep: "Každé ráno projít objednávky, které mohou zpozdit expedici."
+      savings: 120000,
+      priority: "Vysoká",
+      firstStep: "Zmapovat proces expedice a určit, kde nejčastěji vzniká zdržení."
     },
     {
       action: "Zavést jasné odpovědnosti u požadavků",
       impact: "Méně nevyřízené práce bez vlastníka a rychlejší rozhodování",
       difficulty: "Nízká",
       savings: 62000,
+      priority: "Vysoká",
       firstStep: "U každého otevřeného požadavku doplnit odpovědnou osobu."
     },
     {
@@ -265,6 +315,7 @@ export const demoData = {
       impact: "Vedení uvidí zpoždění dříve, než se promítne do nákladů",
       difficulty: "Nízká",
       savings: 45000,
+      priority: "Střední",
       firstStep: "Jednou týdně projít seznam úkolů po termínu."
     },
     {
@@ -272,6 +323,7 @@ export const demoData = {
       impact: "Rychlejší reakce na zákazníky a menší ztráta obchodních příležitostí",
       difficulty: "Střední",
       savings: 54000,
+      priority: "Střední",
       firstStep: "Nastavit upozornění u příležitostí bez reakce delší než 24 hodin."
     },
     {
@@ -279,6 +331,7 @@ export const demoData = {
       impact: "Méně přetížení klíčových lidí a lepší využití volné kapacity",
       difficulty: "Střední",
       savings: 38000,
+      priority: "Střední",
       firstStep: "Porovnat skutečné vytížení týmů a přesunout opakovatelné úkoly."
     },
     {
@@ -286,6 +339,7 @@ export const demoData = {
       impact: "Pravidelné rozhodování podle stejných čísel",
       difficulty: "Nízká",
       savings: 31000,
+      priority: "Nízká",
       firstStep: "Vybrat pět hlavních ukazatelů pro vedení firmy."
     }
   ],
@@ -388,39 +442,32 @@ export const demoData = {
     }
   ],
   audience: [
-    "Menší a střední firmy",
-    "Obchodní společnosti",
+    "Firmy 5-200 lidí",
+    "Obchodní firmy",
     "Sklady a logistika",
-    "Výrobní firmy",
     "Servisní týmy",
-    "Firmy s rostoucím počtem požadavků",
-    "Firmy, které mají data v Excelu, CRM, ERP nebo jiných systémech, ale neumí je využít pro řízení"
+    "Firmy s daty v Excelu nebo systému"
   ],
   cooperationSteps: [
     {
-      title: "Podíváme se na dostupná data",
+      title: "Podíváme se na vaše data",
       description:
         "Nemusíte měnit své systémy. Pracujeme s tím, co už používáte - Excel, účetní systém, CRM, skladový systém, zákaznickou podporu nebo jiné dostupné zdroje."
     },
     {
-      title: "Vytvoříme srozumitelný přehled",
+      title: "Vytvoříme přehled",
       description:
         "Data převedeme do manažerského přehledu, kterému rozumí vedení i běžní vedoucí týmů."
     },
     {
-      title: "Najdeme úzká místa",
+      title: "Najdeme problémy",
       description:
         "Ukážeme, kde vznikají zdržení, ztráty, přetížení lidí nebo nejasnosti v odpovědnosti."
     },
     {
-      title: "Navrhneme konkrétní řešení",
+      title: "Navrhneme řešení",
       description:
         "Výstupem nejsou jen grafy, ale konkrétní doporučení, co změnit a v jakém pořadí."
-    },
-    {
-      title: "Měříme dopad změn",
-      description:
-        "Po zavedení opatření lze pravidelně sledovat, jestli se situace zlepšuje."
     }
   ]
 };

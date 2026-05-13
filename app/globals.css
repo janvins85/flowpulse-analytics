@@ -63,21 +63,17 @@ a {
   text-transform: uppercase;
 }
 
-.risk-high {
+.risk-vysoke {
   border-color: rgba(239, 68, 68, 0.42);
   background: rgba(239, 68, 68, 0.09);
 }
 
-.risk-medium {
+.risk-stredni {
   border-color: rgba(245, 158, 11, 0.42);
   background: rgba(245, 158, 11, 0.09);
 }
 
-.risk-low {
+.risk-nizke {
   border-color: rgba(16, 185, 129, 0.34);
   background: rgba(16, 185, 129, 0.08);
-}
-
-.recharts-tooltip-wrapper {
-  outline: none;
 }
