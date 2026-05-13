@@ -27,7 +27,8 @@ import { demoData, type RiskLevel } from "@/data/demoData";
 import { formatCurrency, formatNumber, riskLabel } from "@/lib/format";
 
 const navItems = [
-  { href: "#prehled", label: "Přehled" },
+  { href: "#prehled
+    ", label: "Přehled" },
   { href: "#zjisteni", label: "Zjištění" },
   { href: "#penize", label: "Peníze" },
   { href: "#proc", label: "Proč" },
@@ -774,7 +775,7 @@ export function FlowLens() {
       <footer className="px-5 py-8 text-center text-sm text-slate-500">
         <div className="font-bold text-slate-400">Firemní rentgen</div>
         <div>Analytika FlowLens</div>
-        <div>Kontakt: honza.vins@gmail.com</div>
+        
         <div>Doména: flowlens.cz</div>
       </footer>
     </main>
