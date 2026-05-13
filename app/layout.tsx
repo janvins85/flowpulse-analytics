@@ -1,5 +1,4 @@
-import type { Metad
-             ata } from "next";
+import type { Metadata } from "next";
 import "./globals.css";
 
 const siteUrl = "https://www.flowlens.cz";
@@ -7,7 +6,7 @@ const siteUrl = "https://www.flowlens.cz";
 export const metadata: Metadata = {
     metadataBase: new URL(siteUrl),
     title: {
-      default: "Firemni rentgen — zjistete, kde vase firma ztraci penize",
+      default: "Firemni rentgen - zjistete, kde vase firma ztraci penize",
           template: "%s | Firemni rentgen",
     },
     description:
@@ -44,7 +43,7 @@ export const metadata: Metadata = {
           locale: "cs_CZ",
           url: siteUrl,
           siteName: "Firemni rentgen",
-          title: "Firemni rentgen — zjistete, kde vase firma ztraci penize",
+          title: "Firemni rentgen - zjistete, kde vase firma ztraci penize",
           description:
                   "Zjistete, kde vase firma ztraci cas, penize a kapacitu lidi. Srozumitelny prehled nad daty, ktera uz mate.",
           images: [
@@ -52,16 +51,19 @@ export const metadata: Metadata = {
                       url: "/og-image.png",
                       width: 1200,
                       height: 630,
-                      alt: "Firemni rentgen — flowlens.cz",
+                      alt: "Firemni rentgen - flowlens.cz",
             },
                 ],
     },
     twitter: {
           card: "summary_large_image",
-          title: "Firemni rentgen — zjistete, kde vase firma ztraci penize",
+          title: "Firemni rentgen - zjistete, kde vase firma ztraci penize",
           description:
                   "Zjistete, kde vase firma ztraci cas, penize a kapacitu lidi.",
           images: ["/og-image.png"],
+    },
+    verification: {
+          google: "wvuMlP0vvzTvj2ecPMZEe4a-kCCGkNY1Ty95PCFwuSg",
     },
 };
 
