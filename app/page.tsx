@@ -34,6 +34,6 @@ export default function Page() {
                           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
                         />
                 <FlowLens />
-          </>>
+          </>
         );
-}</>
+</>
