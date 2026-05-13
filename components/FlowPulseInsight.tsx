@@ -29,7 +29,6 @@ const navItems = [
   { href: "#kontakt", label: "Kontakt" }
 ];
 
-const contactEmail = "honza.vins@gmail.com";
 const contactHref = "mailto:honza.vins@gmail.com?subject=FlowPulse%20Insight%20-%20nezávazná%20ukázka";
 
 const findingIcons: Record<string, LucideIcon> = {
@@ -542,10 +541,12 @@ export function FlowPulseInsight() {
         <div className="grid gap-5 lg:grid-cols-[1fr_0.9fr]">
           <div className="rounded-[8px] border border-slate-700 bg-slate-900 p-6">
             <p className="text-base leading-8 text-slate-200">
-              FlowPulse Insight vzniká z praxe projektového řízení, firemních procesů, datové analytiky a každodenní
-              práce s požadavky, prioritami a kapacitou lidí. Cílem není vytvářet další složitý systém, ale pomoci
-              vedení firem lépe pochopit, co se ve firmě skutečně děje — srozumitelně, prakticky a nad daty, která už
-              mají k dispozici.
+              FlowPulse Insight stojí na zkušenostech s řízením projektů, optimalizací firemních procesů a praktickým
+              využitím dat pro manažerské rozhodování.
+            </p>
+            <p className="mt-4 text-base leading-8 text-slate-200">
+              Nejde o další složitý systém, ale o způsob, jak z dostupných dat získat jasný přehled o fungování firmy,
+              odhalit slabá místa a podpořit konkrétní rozhodnutí s reálným dopadem.
             </p>
           </div>
           <div className="grid gap-3">
@@ -570,9 +571,6 @@ export function FlowPulseInsight() {
           <p className="mt-4 text-base leading-7 text-blue-100">
             Ozvěte se mi a můžeme se nezávazně podívat, jestli má smysl připravit první firemní rentgen i pro vaši firmu.
           </p>
-          <a href={`mailto:${contactEmail}`} className="mt-4 inline-block text-base font-black text-white">
-            {contactEmail}
-          </a>
           <a
             href={contactHref}
             className="mt-6 inline-flex items-center gap-2 rounded-[7px] bg-blue-600 px-5 py-3 text-sm font-bold text-white hover:bg-blue-700"
