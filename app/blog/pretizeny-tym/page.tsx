@@ -45,7 +45,7 @@ export default function Article2() {
                         
                                   <h2 className="text-2xl font-bold text-white mt-10 mb-4">
                                               Proc pretizeni tak casto ujde pozornosti
-                                  </h2>h2>
+                                  </h2>
                                   <p>
                                               Vetsina vedoucich vidi vysledky, ne vytizeni. Clovek dorucuje, takze
                                               je v poradku. Problem je, ze dorucuje za cenu prace navic, nebo na
@@ -59,7 +59,7 @@ export default function Article2() {
                         
                                   <h2 className="text-2xl font-bold text-white mt-10 mb-4">
                                               7 signalu, ze vas tym zacina byt pretizeny
-                                  </h2>h2>
+                                  </h2>
                                   <p>
                                               Tady je seznam znameni, na ktere se vyplati daval pozor:
                                   </p>
@@ -75,7 +75,7 @@ export default function Article2() {
                         
                                   <h2 className="text-2xl font-bold text-white mt-10 mb-4">
                                               Co s tim muzete delat
-                                  </h2>h2>
+                                  </h2>
                                   <p>
                                               Prvni krok je zmerit, ne hadnout. Kolik ukolu ma kazdy clovek
                                               v danou chvili? Jak starych jsou? Ktere jsou dulezite a ktere
@@ -94,7 +94,7 @@ export default function Article2() {
                         
                                   <h2 className="text-2xl font-bold text-white mt-10 mb-4">
                                               Prevence je levnejsi nez nasledky
-                                  </h2>h2>
+                                  </h2>
                                   <p>
                                               Nahradit zkuseneho zamestnance stoji firmu 6-12 mesicnich platu, kdyz
                                               zapoctete naberani, zakoleni a ztratu kontextu. Vyhoreni neni
