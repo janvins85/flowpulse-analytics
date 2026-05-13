@@ -99,6 +99,46 @@ function KpiCard({
   );
 }
 
+function DonutMetric({
+  label,
+  center,
+  detail,
+  percent,
+  tone
+}: {
+  label: string;
+  center: string;
+  detail: string;
+  percent: number;
+  tone: "red" | "amber" | "blue" | "green";
+}) {
+  const color = {
+    red: "#fca5a5",
+    amber: "#fcd34d",
+    blue: "#93c5fd",
+    green: "#86efac"
+  }[tone];
+
+  return (
+    <div className="rounded-[8px] border border-slate-700 bg-slate-900 p-4">
+      <div className="flex items-center gap-4">
+        <div
+          className="relative h-20 w-20 shrink-0 rounded-full"
+          style={{ background: `conic-gradient(${color} ${percent}%, rgba(51, 65, 85, 0.82) 0)` }}
+        >
+          <div className="absolute inset-2 flex items-center justify-center rounded-full bg-slate-950 text-center text-lg font-black text-white">
+            {center}
+          </div>
+        </div>
+        <div>
+          <div className="section-title">{label}</div>
+          <div className="mt-2 text-sm leading-6 text-slate-300">{detail}</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function RiskBadge({ level }: { level: RiskLevel }) {
   const cls =
     level === "vysoke"
@@ -123,6 +163,12 @@ function PriorityBadge({ priority }: { priority: string }) {
 
 export function FlowPulseInsight() {
   const kpi = demoData.kpiSummary;
+  const totalOpenTasks = demoData.people.reduce((sum, person) => sum + person.openTasks, 0);
+  const totalRequestsAndTasks = totalOpenTasks + demoData.requests.openRequests;
+  const overdueShare = Math.round((demoData.processState.overdueTasks / totalOpenTasks) * 100);
+  const withoutResponsibleShare = Math.round((demoData.processState.requestsWithoutResponsiblePerson / totalRequestsAndTasks) * 100);
+  const estimatedWork = totalOpenTasks - demoData.processState.workWithoutEstimate;
+  const estimatedShare = Math.round((estimatedWork / totalOpenTasks) * 100);
 
   return (
     <main>
@@ -345,9 +391,27 @@ export function FlowPulseInsight() {
       >
         <div className="grid gap-5 xl:grid-cols-[360px_1fr]">
           <div className="grid gap-3 sm:grid-cols-3 xl:grid-cols-1">
-            <KpiCard label="Úkoly po termínu" value={formatNumber(demoData.processState.overdueTasks)} sub="napříč firmou" icon={Clock3} tone="red" />
-            <KpiCard label="Bez odpovědné osoby" value={formatNumber(demoData.processState.requestsWithoutResponsiblePerson)} sub="požadavků a úkolů" icon={Users} tone="yellow" />
-            <KpiCard label="Bez odhadu pracnosti" value={formatNumber(demoData.processState.workWithoutEstimate)} sub="vedení nevidí náročnost" icon={ClipboardList} tone="purple" />
+            <DonutMetric
+              label="Celkový počet úkolů"
+              center={formatNumber(totalOpenTasks)}
+              detail={`${formatNumber(demoData.processState.overdueTasks)} úkolů je po termínu (${overdueShare} %).`}
+              percent={overdueShare}
+              tone="red"
+            />
+            <DonutMetric
+              label="Požadavky a úkoly"
+              center={formatNumber(totalRequestsAndTasks)}
+              detail={`${formatNumber(demoData.processState.requestsWithoutResponsiblePerson)} položek nemá jasnou odpovědnou osobu (${withoutResponsibleShare} %).`}
+              percent={withoutResponsibleShare}
+              tone="amber"
+            />
+            <DonutMetric
+              label="Odhad pracnosti"
+              center={`${estimatedShare} %`}
+              detail={`${formatNumber(estimatedWork)} z ${formatNumber(totalOpenTasks)} úkolů má odhad pracnosti. Bez odhadu zůstává ${formatNumber(demoData.processState.workWithoutEstimate)} úkolů.`}
+              percent={estimatedShare}
+              tone="green"
+            />
           </div>
           <div className="grid gap-3 md:grid-cols-2">
             {demoData.people.map((person) => {
