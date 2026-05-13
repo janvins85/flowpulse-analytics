@@ -18,6 +18,7 @@ import {
   Settings2,
   ShieldCheck,
   Target,
+  
   TrendingUp,
   Users,
   UsersRound
@@ -27,8 +28,7 @@ import { demoData, type RiskLevel } from "@/data/demoData";
 import { formatCurrency, formatNumber, riskLabel } from "@/lib/format";
 
 const navItems = [
-  { href: "#prehled
-    ", label: "Přehled" },
+  { href: "#prehled", label: "Přehled" },
   { href: "#zjisteni", label: "Zjištění" },
   { href: "#penize", label: "Peníze" },
   { href: "#proc", label: "Proč" },
