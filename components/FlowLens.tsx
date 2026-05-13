@@ -36,7 +36,7 @@ const navItems = [
   { href: "#kontakt", label: "Kontakt" }
 ];
 
-const contactHref = "mailto:honza.vins@gmail.com?subject=FlowLens%20-%20nezávazná%20ukázka";
+const contactHref = "mailto:honza.vins@gmail.com?subject=Firemní%20rentgen%20-%20nezávazná%20ukázka";
 
 const findingIcons: Record<string, LucideIcon> = {
   warehouse: PackageCheck,
@@ -185,7 +185,7 @@ export function FlowLens() {
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3 lg:px-8">
           <a href="#uvod" className="flex items-center gap-2 text-sm font-black text-white">
             <Gauge className="h-5 w-5 text-blue-300" />
-            FlowLens
+            Firemní rentgen
           </a>
           <div className="hidden items-center gap-1 md:flex">
             {navItems.map((item) => (
@@ -208,13 +208,15 @@ export function FlowLens() {
               <Factory className="h-4 w-4" />
               Ukázková firma {demoData.company} | {demoData.field}
             </div>
-            <h1 className="text-4xl font-black tracking-normal text-white md:text-6xl">FlowLens</h1>
-            <p className="mt-4 text-2xl font-semibold text-blue-100">Firemní rentgen z dat, která už máte.</p>
+            <h1 className="text-4xl font-black tracking-normal text-white md:text-6xl">Firemní rentgen</h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
               Zjistěte během několika dní, kde vaše firma ztrácí čas, peníze a kapacitu lidí.
             </p>
             <p className="mt-3 max-w-2xl text-base leading-7 text-slate-300">
-              Bez složitých implementací. Bez výměny systémů. Nad daty, která už používáte.
+              Ukážeme vám, co se ve firmě skutečně děje — nad daty, která už máte.
+            </p>
+            <p className="mt-3 max-w-2xl text-base leading-7 text-slate-300">
+              Bez složitých implementací. Bez výměny systémů.
             </p>
             <p className="mt-5 max-w-2xl text-sm font-semibold text-slate-400">
               Možná vás překvapí, kde firma ztrácí nejvíc peněz.
@@ -236,7 +238,7 @@ export function FlowLens() {
             <div className="mt-7 grid gap-3 text-sm text-slate-300 sm:grid-cols-3">
               {[
                 "Pro malé a střední firmy",
-                "Funguje nad daty z Excelu, CRM i skladových systémů",
+                "Funguje s daty z Excelu, CRM i skladových systémů",
                 "První výstup obvykle do 10–14 dnů"
               ].map((item) => (
                 <div key={item} className="flex items-start gap-2 rounded-[8px] border border-slate-700 bg-slate-900/80 p-3">
@@ -245,6 +247,9 @@ export function FlowLens() {
                 </div>
               ))}
             </div>
+            <p className="mt-5 max-w-2xl text-sm text-slate-500">
+              Firemní rentgen využívá analytický přístup FlowLens.
+            </p>
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
             <div className="sm:col-span-2">
@@ -290,10 +295,10 @@ export function FlowLens() {
         </div>
       </Section>
 
-      <Section title="Co je FlowLens">
+      <Section title="Co je firemní rentgen">
         <div className="rounded-[8px] border border-slate-700 bg-slate-900 p-6">
           <p className="text-lg leading-8 text-slate-200">
-            FlowLens není další systém, který musí lidé ve firmě složitě vyplňovat. Je to srozumitelný pohled nad daty,
+            Firemní rentgen není další systém, který musí lidé ve firmě složitě vyplňovat. Je to srozumitelný pohled nad daty,
             která už ve firmě vznikají — z Excelu, CRM, účetního systému, skladu, zákaznické podpory nebo jiných nástrojů.
           </p>
           <p className="mt-4 text-lg leading-8 text-slate-200">
@@ -640,7 +645,7 @@ export function FlowLens() {
       <section className="mx-auto max-w-7xl px-5 pb-14 lg:px-8">
         <div className="grid gap-5 lg:grid-cols-2">
           <div className="rounded-[8px] border border-slate-700 bg-slate-900 p-5">
-            <h3 className="text-xl font-black text-white">Co FlowLens není</h3>
+            <h3 className="text-xl font-black text-white">Co firemní rentgen není</h3>
             <div className="mt-4 grid gap-3 text-sm text-slate-300">
               {[
                 "Není to složitý korporátní reporting.",
@@ -656,7 +661,7 @@ export function FlowLens() {
             </div>
           </div>
           <div className="rounded-[8px] border border-slate-700 bg-slate-900 p-5">
-            <h3 className="text-xl font-black text-white">Co FlowLens je</h3>
+            <h3 className="text-xl font-black text-white">Co firemní rentgen je</h3>
             <div className="mt-4 grid gap-3 text-sm text-slate-300">
               {[
                 "Praktický firemní rentgen.",
@@ -678,7 +683,7 @@ export function FlowLens() {
         <div className="grid gap-5 lg:grid-cols-[1fr_0.9fr]">
           <div className="rounded-[8px] border border-slate-700 bg-slate-900 p-6">
             <p className="text-base leading-8 text-slate-200">
-              FlowLens stojí na praktických zkušenostech z projektového řízení, procesní analýzy a práce s firemními
+              Firemní rentgen stojí na praktických zkušenostech z projektového řízení, procesní analýzy a práce s firemními
               daty. Vznikl jako odpověď na častý problém menších a středních firem: data ve firmě existují, ale nejsou
               převedena do podoby, podle které se dá jednoduše rozhodovat.
             </p>
@@ -711,7 +716,7 @@ export function FlowLens() {
           <div className="rounded-[8px] border border-slate-700 bg-slate-900 p-6">
             <p className="text-lg font-black text-white">Vaše data zůstávají vždy pod vaší kontrolou.</p>
             <p className="mt-4 text-base leading-8 text-slate-200">
-              FlowLens pracuje pouze s daty, která sami poskytnete, a výhradně za účelem analýzy pro vaši firmu. Data
+              Pracujeme pouze s daty, která sami poskytnete, a výhradně za účelem analýzy pro vaši firmu. Data
               nikdy neposkytujeme třetím stranám, nesdílíme je s jinými klienty a nepoužíváme je pro žádné jiné účely.
             </p>
             <p className="mt-4 text-base leading-8 text-slate-200">
@@ -725,7 +730,7 @@ export function FlowLens() {
               lze omezit, anonymizovat nebo připravit pouze jako export vybraných oblastí.
             </p>
             <p className="mt-5 rounded-[8px] border border-blue-400/20 bg-blue-500/10 p-4 text-sm leading-6 text-blue-100">
-              FlowLens nevytváří kopie dat nad rámec potřebné analýzy a neslouží jako externí úložiště firemních informací.
+              Firemní rentgen nevytváří kopie dat nad rámec potřebné analýzy a neslouží jako externí úložiště firemních informací.
             </p>
           </div>
           <div className="grid gap-3">
@@ -750,9 +755,9 @@ export function FlowLens() {
 
       <section id="kontakt" className="border-y border-blue-400/20 bg-blue-500/10 px-5 py-12 text-center">
         <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-black text-white">Chcete vidět FlowLens nad daty vaší firmy?</h2>
+          <h2 className="text-3xl font-black text-white">Chcete vidět firemní rentgen vaší firmy?</h2>
           <p className="mt-4 text-base leading-7 text-blue-100">
-            Ozvěte se mi a můžeme se nezávazně podívat, jestli dává smysl připravit první firemní rentgen i pro vaši firmu.
+            Ozvěte se mi a podíváme se, jestli má smysl připravit první analýzu i pro vás.
           </p>
           <p className="mt-3 text-base leading-7 text-blue-100">
             Pro první rozhovor stačí přibližně 20 minut a základní představa o tom, jaká data máte k dispozici.
@@ -767,7 +772,10 @@ export function FlowLens() {
       </section>
 
       <footer className="px-5 py-8 text-center text-sm text-slate-500">
-        FlowLens — Firemní rentgen z dat, která už máte. Doména: www.flowlens.cz
+        <div className="font-bold text-slate-400">Firemní rentgen</div>
+        <div>Analytika FlowLens</div>
+        <div>Kontakt: honza.vins@gmail.com</div>
+        <div>Doména: flowlens.cz</div>
       </footer>
     </main>
   );

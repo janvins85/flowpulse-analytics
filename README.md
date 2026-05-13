@@ -1,14 +1,14 @@
-# FlowLens
+# Firemní rentgen (FlowLens)
 
-FlowLens je finální demo web služby zaměřené na firemní datovou analýzu, procesní audit a odhalování ztrát, zdržení a neefektivity ve firmách.
+Služba zaměřená na odhalování ztrát, neefektivity a přetížení ve firmách pomocí datové analýzy.
 
 Hlavní komunikační motiv:
 
 ```text
-FlowLens — Firemní rentgen z dat, která už máte.
+Firemní rentgen
 ```
 
-FlowLens pomáhá malým a středním firmám zjistit, kde ztrácí čas, peníze a kapacitu lidí. Nejde o další složitý systém, ale o přehlednou analytickou vrstvu nad daty, která už firma má.
+Firemní rentgen pomáhá malým a středním firmám zjistit, kde ztrácí čas, peníze a kapacitu lidí. Nejde o další složitý systém, ale o přehlednou analytickou vrstvu nad daty, která už firma má. FlowLens zůstává sekundární technické označení analytického přístupu.
 
 ## Pro koho je projekt určený
 
@@ -27,7 +27,7 @@ V projektu nejsou žádná reálná firemní data, reálná jména lidí, intern
 
 ## Bezpečnost dat
 
-FlowLens je v této podobě prezentační demo nad fiktivními daty. Při budoucím napojení na reálná data počítá s tím, že data zůstávají pod kontrolou klienta, používají se pouze pro dohodnutou analýzu a lze pracovat i s anonymizovaným nebo omezeným rozsahem dat.
+Firemní rentgen je v této podobě prezentační demo nad fiktivními daty. Při budoucím napojení na reálná data počítá s tím, že data zůstávají pod kontrolou klienta, používají se pouze pro dohodnutou analýzu a lze pracovat i s anonymizovaným nebo omezeným rozsahem dat.
 
 ## Jak demo použít
 
@@ -52,7 +52,7 @@ honza.vins@gmail.com
 
 - Web běží přes Vercel.
 - Kód je napojený na GitHub.
-- Produkční doména: https://www.flowlens.cz/
+- Produkční doména: https://flowlens.cz
 - Kontaktní e-mail: honza.vins@gmail.com
 
 ## Technologie
@@ -97,7 +97,7 @@ npm run start
 Produkční doména:
 
 ```text
-https://www.flowlens.cz/
+https://flowlens.cz
 ```
 
 ## Jak projekt rozšířit

@@ -2,17 +2,16 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "FlowLens — Firemní rentgen z dat",
+  title: "Firemní rentgen — zjistěte, kde vaše firma ztrácí peníze",
   description:
-    "FlowLens pomáhá malým a středním firmám zjistit, kde ztrácí čas, peníze a kapacitu lidí. Srozumitelný přehled nad daty, která už máte.",
+    "Firemní rentgen pomáhá firmám odhalit, kde ztrácí čas, peníze a kapacitu lidí. Srozumitelný přehled nad daty, která už máte.",
   keywords: [
     "firemní rentgen",
-    "datová analytika",
     "audit procesů",
+    "ztráty ve firmě",
     "procesní analýza",
-    "firemní data",
-    "úspory ve firmě",
-    "FlowLens"
+    "datová analýza firmy",
+    "úspory ve firmě"
   ]
 };
 
