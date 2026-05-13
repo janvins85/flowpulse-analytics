@@ -1,41 +1,52 @@
 # FlowPulse Insight
 
-FlowPulse Insight je demo firemního rentgenu: srozumitelná ukázka služby, která z dostupných firemních dat rychle ukáže, kde firma ztrácí peníze, čas a kapacitu lidí.
+**FlowPulse Insight — Firemní rentgen z dat, která už máte** je finální demo podoba webu pro prezentaci služby malým a středním firmám.
 
-Ukázka je postavená jako příběh pro vedení firmy:
+Ukazuje, jak lze z dostupných firemních dat srozumitelně odhalit:
 
-1. Co se ve firmě děje.
-2. Kde jsou problémy.
-3. Kolik to stojí.
-4. Proč to vzniká.
-5. Co s tím dělat.
+- kde firma ztrácí peníze,
+- kde se zdržuje práce,
+- kde jsou lidé přetížení,
+- které procesy nemají jasnou odpovědnost,
+- kde má změna největší finanční dopad.
 
-Nejde o účetní audit ani složitý reporting. Cílem je prakticky ukázat, kde má změna největší dopad.
+Nejde o účetní audit ani složitý reporting. Cílem je prakticky ukázat, kde má smysl začít.
 
-## Pro koho je demo
+## Pro koho je projekt určený
 
-- firmy 5-200 lidí,
+- malé a střední firmy,
+- firmy o velikosti 5–200 lidí,
 - obchodní firmy,
 - sklady a logistika,
 - servisní týmy,
-- firmy s daty v Excelu nebo systému,
 - majitelé, jednatelé, provozní manažeři a vedoucí týmů.
 
 ## Demo data
 
-Aplikace používá čistě fiktivní data firmy **Novák & Partneři s.r.o.** z oblasti velkoobchodu, skladu a servisního týmu.
+Aplikace používá čistě fiktivní data ukázkové firmy **Novák & Partneři s.r.o.** z oblasti velkoobchodu, skladu a servisního týmu.
 
 V projektu nejsou žádná reálná firemní data, reálná jména lidí, interní názvy systémů, tokeny ani napojení na skutečné služby.
 
 ## Jak demo použít
 
-Demo je připravené pro obchodní prezentaci. Doporučený scénář:
+Demo je připravené pro reálné posílání potenciálním klientům a pro obchodní prezentaci služby.
+
+Doporučený scénář:
 
 1. Začněte sekcí **Co firmu stojí nejvíc**.
 2. Ukažte finanční dopady v korunách.
 3. Vysvětlete, proč problémy vznikají.
-4. Projděte doporučené kroky.
-5. Uzavřete otázkou, jaká data má zákazník dnes k dispozici.
+4. Ukažte možnost malého pilotu nad jednou oblastí.
+5. Projděte doporučené kroky.
+6. Uzavřete otázkou, jaká data má zákazník dnes k dispozici.
+
+## Kontakt
+
+Kontaktní e-mail pro domluvení nezávazné ukázky:
+
+```text
+honza.vins@gmail.com
+```
 
 ## Technologie
 

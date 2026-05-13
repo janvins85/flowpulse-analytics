@@ -25,8 +25,12 @@ const navItems = [
   { href: "#penize", label: "Peníze" },
   { href: "#proc", label: "Proč" },
   { href: "#doporuceni", label: "Doporučení" },
-  { href: "#spoluprace", label: "Spolupráce" }
+  { href: "#spoluprace", label: "Spolupráce" },
+  { href: "#kontakt", label: "Kontakt" }
 ];
+
+const contactEmail = "honza.vins@gmail.com";
+const contactHref = "mailto:honza.vins@gmail.com?subject=FlowPulse%20Insight%20-%20nezávazná%20ukázka";
 
 const findingIcons: Record<string, LucideIcon> = {
   warehouse: PackageCheck,
@@ -174,9 +178,15 @@ export function FlowPulseInsight() {
               >
                 Co dokážeme odhalit <Search className="h-4 w-4" />
               </a>
+              <a
+                href={contactHref}
+                className="inline-flex items-center gap-2 rounded-[7px] border border-blue-400/40 px-4 py-2.5 text-sm font-bold text-blue-100 hover:bg-blue-500/10"
+              >
+                Domluvit nezávaznou ukázku <ArrowRight className="h-4 w-4" />
+              </a>
             </div>
             <div className="mt-7 grid gap-3 text-sm text-slate-300 sm:grid-cols-3">
-              {["Pro malé a střední firmy", "Funguje s daty z Excelu, CRM i skladových systémů", "Výstup do 14 dnů"].map((item) => (
+              {["Pro malé a střední firmy", "Funguje s daty z Excelu, CRM i skladových systémů", "Výstup obvykle do 14 dnů"].map((item) => (
                 <div key={item} className="flex items-start gap-2 rounded-[8px] border border-slate-700 bg-slate-900/80 p-3">
                   <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-300" />
                   <span>{item}</span>
@@ -197,7 +207,7 @@ export function FlowPulseInsight() {
         id="prehled"
         eyebrow="1. Co se ve firmě děje"
         title="Co firmu stojí nejvíc"
-        subtitle="Tady začíná firemní rentgen: pět problémů, které mají v ukázkové firmě největší dopad na peníze, čas a kapacitu lidí."
+        subtitle="Tady začíná firemní rentgen: pět problémů, které mají v ukázkové firmě Novák & Partneři s.r.o. největší dopad na peníze, čas a kapacitu lidí."
         className="pb-6"
       >
         <div className="grid gap-3">
@@ -224,7 +234,7 @@ export function FlowPulseInsight() {
           <div className="grid gap-6 lg:grid-cols-[1fr_280px] lg:items-center">
             <div>
               <p className="text-lg leading-8 text-slate-100">
-                Ukázková firma aktuálně přichází přibližně o{" "}
+                Ukázková firma Novák & Partneři s.r.o. aktuálně přichází přibližně o{" "}
                 <strong className="text-3xl font-black text-red-200">420 000 Kč měsíčně</strong>. Největší dopad má{" "}
                 <strong className="text-white">zpožděná expedice</strong>,{" "}
                 <strong className="text-white">pomalá reakce obchodu</strong> a{" "}
@@ -297,6 +307,31 @@ export function FlowPulseInsight() {
               <div key={cause} className="flex items-start gap-3 rounded-[8px] border border-slate-700 bg-slate-900 p-4 text-slate-200">
                 <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-amber-300" />
                 <span className="font-semibold">{cause}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      <Section title="Začít lze i malým pilotem">
+        <div className="grid gap-5 lg:grid-cols-[1fr_0.9fr]">
+          <div className="rounded-[8px] border border-blue-400/25 bg-blue-500/10 p-6">
+            <p className="text-lg leading-8 text-slate-100">
+              Nemusíte hned analyzovat celou firmu. První ukázkový výstup lze připravit nad jednou konkrétní oblastí
+              — například obchodem, skladem, požadavky, financemi nebo kapacitou lidí. Cílem je rychle ověřit, jestli
+              data ukážou něco, co má reálný dopad na řízení firmy.
+            </p>
+          </div>
+          <div className="grid gap-3">
+            {[
+              "Pilot nad jednou oblastí",
+              "Práce s dostupnými daty",
+              "Výstup obvykle do 14 dnů",
+              "Konkrétní zjištění a doporučení"
+            ].map((item) => (
+              <div key={item} className="flex items-start gap-3 rounded-[8px] border border-slate-700 bg-slate-900 p-4 text-slate-200">
+                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-300" />
+                <span className="font-semibold">{item}</span>
               </div>
             ))}
           </div>
@@ -503,12 +538,43 @@ export function FlowPulseInsight() {
         </div>
       </section>
 
-      <section className="border-y border-blue-400/20 bg-blue-500/10 px-5 py-12 text-center">
+      <Section title="Kdo za tím stojí">
+        <div className="grid gap-5 lg:grid-cols-[1fr_0.9fr]">
+          <div className="rounded-[8px] border border-slate-700 bg-slate-900 p-6">
+            <p className="text-base leading-8 text-slate-200">
+              FlowPulse Insight vzniká z praxe projektového řízení, firemních procesů, datové analytiky a každodenní
+              práce s požadavky, prioritami a kapacitou lidí. Cílem není vytvářet další složitý systém, ale pomoci
+              vedení firem lépe pochopit, co se ve firmě skutečně děje — srozumitelně, prakticky a nad daty, která už
+              mají k dispozici.
+            </p>
+          </div>
+          <div className="grid gap-3">
+            {[
+              "zkušenost s řízením IT a rozvojových projektů",
+              "praktická znalost firemních procesů",
+              "schopnost propojit data, provoz a manažerské rozhodování",
+              "zaměření na konkrétní dopady, ne jen na hezké grafy"
+            ].map((item) => (
+              <div key={item} className="flex items-start gap-3 rounded-[8px] border border-slate-700 bg-slate-900 p-4 text-slate-200">
+                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-blue-300" />
+                <span>{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      <section id="kontakt" className="border-y border-blue-400/20 bg-blue-500/10 px-5 py-12 text-center">
         <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-black text-white">Chcete to vidět u své firmy?</h2>
-          <p className="mt-3 text-base text-blue-100">Stačí se podívat na data, která už máte.</p>
+          <h2 className="text-3xl font-black text-white">Chcete zjistit, kde vaše firma ztrácí čas a peníze?</h2>
+          <p className="mt-4 text-base leading-7 text-blue-100">
+            Ozvěte se mi a můžeme se nezávazně podívat, jestli má smysl připravit první firemní rentgen i pro vaši firmu.
+          </p>
+          <a href={`mailto:${contactEmail}`} className="mt-4 inline-block text-base font-black text-white">
+            {contactEmail}
+          </a>
           <a
-            href="#spoluprace"
+            href={contactHref}
             className="mt-6 inline-flex items-center gap-2 rounded-[7px] bg-blue-600 px-5 py-3 text-sm font-bold text-white hover:bg-blue-700"
           >
             Domluvit nezávaznou ukázku <ArrowRight className="h-4 w-4" />

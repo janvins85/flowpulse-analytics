@@ -442,7 +442,7 @@ export const demoData = {
     }
   ],
   audience: [
-    "Firmy 5-200 lidí",
+    "Firmy o velikosti 5–200 lidí",
     "Obchodní firmy",
     "Sklady a logistika",
     "Servisní týmy",
