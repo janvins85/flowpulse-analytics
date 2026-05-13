@@ -1,6 +1,6 @@
 # FlowLens
 
-FlowLens je demo web služby zaměřené na firemní datovou analýzu, procesní audit a odhalování ztrát, zdržení a neefektivity ve firmách.
+FlowLens je finální demo web služby zaměřené na firemní datovou analýzu, procesní audit a odhalování ztrát, zdržení a neefektivity ve firmách.
 
 Hlavní komunikační motiv:
 
@@ -21,7 +21,7 @@ FlowLens pomáhá malým a středním firmám zjistit, kde ztrácí čas, peníz
 
 ## Demo data
 
-Projekt používá fiktivní demo data ukázkové firmy **Novák & Partneři s.r.o.** z oblasti velkoobchodu, skladu a servisního týmu.
+Demo používá fiktivní data ukázkové firmy **Novák & Partneři s.r.o.** z oblasti velkoobchodu, skladu a servisního týmu.
 
 V projektu nejsou žádná reálná firemní data, reálná jména lidí, interní názvy systémů, tokeny ani napojení na skutečné služby.
 
@@ -52,7 +52,7 @@ honza.vins@gmail.com
 
 - Web běží přes Vercel.
 - Kód je napojený na GitHub.
-- Produkční doména: https://flowlens.cz
+- Produkční doména: https://www.flowlens.cz/
 - Kontaktní e-mail: honza.vins@gmail.com
 
 ## Technologie
@@ -97,7 +97,7 @@ npm run start
 Produkční doména:
 
 ```text
-https://flowlens.cz
+https://www.flowlens.cz/
 ```
 
 ## Jak projekt rozšířit

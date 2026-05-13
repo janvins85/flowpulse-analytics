@@ -13,7 +13,7 @@ export const demoData = {
     teamLoad: 84
   },
   managementSummary:
-    "Ukázková firma aktuálně přichází přibližně o 420 000 Kč měsíčně. Největší dopad má zpožděná expedice, pomalá reakce obchodu a nerovnoměrné vytížení lidí. Při odstranění těchto tří oblastí lze výrazně zlepšit výkon firmy během několika týdnů.",
+    "Ukázková firma Novák & Partneři s.r.o. aktuálně přichází přibližně o 420 000 Kč měsíčně. Největší dopad má zpožděná expedice, pomalá reakce obchodu a nerovnoměrné vytížení lidí. Při odstranění těchto tří oblastí lze výrazně zlepšit výkon firmy během několika týdnů.",
   summaryHighlights: [
     { label: "Hlavní problém", value: "Zpožděná expedice a nejasné odpovědnosti", tone: "red" },
     { label: "Finanční dopad", value: "420 000 Kč měsíčně", tone: "amber" },

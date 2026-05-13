@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import {
   AlertTriangle,
   ArrowRight,
@@ -166,6 +169,7 @@ function PriorityBadge({ priority }: { priority: string }) {
 }
 
 export function FlowLens() {
+  const [showAllPeople, setShowAllPeople] = useState(false);
   const kpi = demoData.kpiSummary;
   const totalOpenTasks = demoData.people.reduce((sum, person) => sum + person.openTasks, 0);
   const totalRequestsAndTasks = totalOpenTasks + demoData.requests.openRequests;
@@ -173,6 +177,7 @@ export function FlowLens() {
   const withoutResponsibleShare = Math.round((demoData.processState.requestsWithoutResponsiblePerson / totalRequestsAndTasks) * 100);
   const estimatedWork = totalOpenTasks - demoData.processState.workWithoutEstimate;
   const estimatedShare = Math.round((estimatedWork / totalOpenTasks) * 100);
+  const visiblePeople = showAllPeople ? demoData.people : demoData.people.slice(0, 4);
 
   return (
     <main>
@@ -201,7 +206,7 @@ export function FlowLens() {
           <div>
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-blue-400/25 bg-blue-500/10 px-3 py-1 text-sm text-blue-100">
               <Factory className="h-4 w-4" />
-              {demoData.company} | {demoData.field}
+              Ukázková firma {demoData.company} | {demoData.field}
             </div>
             <h1 className="text-4xl font-black tracking-normal text-white md:text-6xl">FlowLens</h1>
             <p className="mt-4 text-2xl font-semibold text-blue-100">Firemní rentgen z dat, která už máte.</p>
@@ -242,9 +247,15 @@ export function FlowLens() {
             </div>
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
+            <div className="sm:col-span-2">
+              <div className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/80 px-3 py-1 text-xs font-semibold text-slate-300">
+                <Eye className="h-3.5 w-3.5 text-blue-300" />
+                Ukázkový přehled nad fiktivními daty
+              </div>
+            </div>
             <KpiCard label="Odhad měsíčních ztrát" value={formatCurrency(kpi.monthlyLossEstimate)} sub="praktický odhad dopadu" icon={LineChart} tone="yellow" />
             <KpiCard label="Ohrožené tržby" value={formatCurrency(kpi.threatenedRevenue)} sub="pomalá reakce obchodu" icon={Coins} tone="red" />
-            <KpiCard label="Ztracené hodiny měsíčně" value={`${formatNumber(kpi.hoursLostMonthly)} h`} sub="čas lidí a čekání" icon={Clock3} tone="purple" />
+            <KpiCard label="Ztracené hodiny měsíčně" value={`${formatNumber(kpi.hoursLostMonthly)} hodin`} sub="čas lidí a čekání" icon={Clock3} tone="purple" />
             <KpiCard label="Odhadovaná úspora" value={formatCurrency(kpi.estimatedSavings)} sub="po prvních opatřeních" icon={Target} tone="green" />
           </div>
         </div>
@@ -406,7 +417,7 @@ export function FlowLens() {
       <Section
         id="lide"
         eyebrow="Dopad na provoz"
-        title="Vytížení lidí a stav práce"
+        title="Vytížení lidí a týmů"
         subtitle="Riziko musí být vidět hned. Proto je každý člověk zobrazený jako samostatná karta místo široké tabulky."
       >
         <div className="grid gap-5 xl:grid-cols-[360px_1fr]">
@@ -434,7 +445,7 @@ export function FlowLens() {
             />
           </div>
           <div className="grid gap-3 md:grid-cols-2">
-            {demoData.people.map((person) => {
+            {visiblePeople.map((person) => {
               const loadPercent = Math.round((person.actualLoad / person.plannedCapacity) * 100);
 
               return (
@@ -480,6 +491,17 @@ export function FlowLens() {
                 </article>
               );
             })}
+            {demoData.people.length > 4 ? (
+              <div className="md:col-span-2">
+                <button
+                  type="button"
+                  onClick={() => setShowAllPeople((current) => !current)}
+                  className="w-full rounded-[7px] border border-blue-400/35 bg-blue-500/10 px-4 py-3 text-sm font-bold text-blue-100 hover:bg-blue-500/15"
+                >
+                  {showAllPeople ? "Skrýt další osoby" : "Zobrazit další osoby"}
+                </button>
+              </div>
+            ) : null}
           </div>
         </div>
       </Section>
@@ -585,6 +607,34 @@ export function FlowLens() {
             </div>
           </div>
         </div>
+        <div className="mt-5 rounded-[8px] border border-blue-400/25 bg-blue-500/10 p-5">
+          <div className="grid gap-5 lg:grid-cols-[1fr_0.9fr] lg:items-start">
+            <div>
+              <h3 className="text-xl font-black text-white">Co je potřeba pro první analýzu?</h3>
+              <p className="mt-3 text-sm leading-7 text-blue-50">
+                Pro první firemní rentgen obvykle stačí jednorázové exporty z dat, která už ve firmě máte — například
+                z Excelu, CRM, skladu, účetního systému, zákaznické podpory nebo evidence úkolů.
+              </p>
+              <p className="mt-3 text-sm leading-7 text-blue-100">
+                Není nutné hned zavádět nové systémy ani nastavovat složité integrace. Začít lze jednoduše nad jednou
+                oblastí firmy.
+              </p>
+            </div>
+            <div className="grid gap-2 text-sm text-blue-50 sm:grid-cols-2">
+              {[
+                "export do Excelu nebo CSV",
+                "možnost anonymizace dat",
+                "pilot nad jednou oblastí",
+                "první výstup obvykle do 10–14 dnů"
+              ].map((item) => (
+                <div key={item} className="flex items-start gap-2 rounded-[7px] bg-slate-950/35 p-3">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-300" />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </Section>
 
       <section className="mx-auto max-w-7xl px-5 pb-14 lg:px-8">
@@ -629,11 +679,11 @@ export function FlowLens() {
           <div className="rounded-[8px] border border-slate-700 bg-slate-900 p-6">
             <p className="text-base leading-8 text-slate-200">
               FlowLens stojí na praktických zkušenostech z projektového řízení, procesní analýzy a práce s firemními
-              daty. Zaměřuje se na to, aby vedení firmy získalo jasný a použitelný pohled na provoz, kapacity, slabá
-              místa a finanční dopady jednotlivých problémů.
+              daty. Vznikl jako odpověď na častý problém menších a středních firem: data ve firmě existují, ale nejsou
+              převedena do podoby, podle které se dá jednoduše rozhodovat.
             </p>
             <p className="mt-4 text-base leading-8 text-slate-200">
-              Cílem není dodat další sadu grafů, ale vytvořit podklad pro konkrétní rozhodnutí — co změnit, v jakém
+              Cílem není dodat další sadu grafů, ale vytvořit srozumitelný podklad pro konkrétní rozhodnutí — co změnit, v jakém
               pořadí a s jakým očekávaným dopadem.
             </p>
           </div>
@@ -670,6 +720,10 @@ export function FlowLens() {
             <p className="mt-4 text-base leading-8 text-slate-200">
               Pokud preferujete, lze pracovat také s anonymizovanými nebo omezenými daty.
             </p>
+            <p className="mt-4 text-base leading-8 text-slate-200">
+              Pro první analýzu není nutné předávat citlivé osobní údaje ani obchodní tajemství v plném rozsahu. Data
+              lze omezit, anonymizovat nebo připravit pouze jako export vybraných oblastí.
+            </p>
             <p className="mt-5 rounded-[8px] border border-blue-400/20 bg-blue-500/10 p-4 text-sm leading-6 text-blue-100">
               FlowLens nevytváří kopie dat nad rámec potřebné analýzy a neslouží jako externí úložiště firemních informací.
             </p>
@@ -700,6 +754,9 @@ export function FlowLens() {
           <p className="mt-4 text-base leading-7 text-blue-100">
             Ozvěte se mi a můžeme se nezávazně podívat, jestli dává smysl připravit první firemní rentgen i pro vaši firmu.
           </p>
+          <p className="mt-3 text-base leading-7 text-blue-100">
+            Pro první rozhovor stačí přibližně 20 minut a základní představa o tom, jaká data máte k dispozici.
+          </p>
           <a
             href={contactHref}
             className="mt-6 inline-flex items-center gap-2 rounded-[7px] bg-blue-600 px-5 py-3 text-sm font-bold text-white hover:bg-blue-700"
@@ -710,7 +767,7 @@ export function FlowLens() {
       </section>
 
       <footer className="px-5 py-8 text-center text-sm text-slate-500">
-        FlowLens — Firemní rentgen z dat, která už máte. Doména: flowlens.cz
+        FlowLens — Firemní rentgen z dat, která už máte. Doména: www.flowlens.cz
       </footer>
     </main>
   );
