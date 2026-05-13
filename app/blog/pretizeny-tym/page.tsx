@@ -31,7 +31,7 @@ export default function Article2() {
                         </div>
                         <h1 className="text-4xl font-black mb-6 leading-tight">
                                   Jak poznat pretizeny tym driv, nez zacne nestihat
-                        </h1>h1>
+                        </h1>
                         <p className="text-slate-400 text-sm mb-8">13. kvetna 2026 &bull; 6 minut cteni</p>
                 
                         <div className="prose prose-invert max-w-none space-y-6 text-slate-300 leading-relaxed">
