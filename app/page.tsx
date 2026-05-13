@@ -1,5 +1,5 @@
-import { FlowPulseInsight } from "@/components/FlowPulseInsight";
+import { FlowLens } from "@/components/FlowLens";
 
 export default function Page() {
-  return <FlowPulseInsight />;
+  return <FlowLens />;
 }

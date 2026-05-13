@@ -1,16 +1,14 @@
-# FlowPulse Insight
+# FlowLens
 
-**FlowPulse Insight — Firemní rentgen z dat, která už máte** je finální demo podoba webu pro prezentaci služby malým a středním firmám.
+FlowLens je demo web služby zaměřené na firemní datovou analýzu, procesní audit a odhalování ztrát, zdržení a neefektivity ve firmách.
 
-Ukazuje, jak lze z dostupných firemních dat srozumitelně odhalit:
+Hlavní komunikační motiv:
 
-- kde firma ztrácí peníze,
-- kde se zdržuje práce,
-- kde jsou lidé přetížení,
-- které procesy nemají jasnou odpovědnost,
-- kde má změna největší finanční dopad.
+```text
+FlowLens — Firemní rentgen z dat, která už máte.
+```
 
-Nejde o účetní audit ani složitý reporting. Cílem je prakticky ukázat, kde má smysl začít.
+FlowLens pomáhá malým a středním firmám zjistit, kde ztrácí čas, peníze a kapacitu lidí. Nejde o další složitý systém, ale o přehlednou analytickou vrstvu nad daty, která už firma má.
 
 ## Pro koho je projekt určený
 
@@ -23,7 +21,7 @@ Nejde o účetní audit ani složitý reporting. Cílem je prakticky ukázat, kd
 
 ## Demo data
 
-Aplikace používá čistě fiktivní data ukázkové firmy **Novák & Partneři s.r.o.** z oblasti velkoobchodu, skladu a servisního týmu.
+Projekt používá fiktivní demo data ukázkové firmy **Novák & Partneři s.r.o.** z oblasti velkoobchodu, skladu a servisního týmu.
 
 V projektu nejsou žádná reálná firemní data, reálná jména lidí, interní názvy systémů, tokeny ani napojení na skutečné služby.
 
@@ -42,11 +40,16 @@ Doporučený scénář:
 
 ## Kontakt
 
-Kontaktní e-mail pro domluvení nezávazné ukázky:
-
 ```text
 honza.vins@gmail.com
 ```
+
+## Provoz
+
+- Web běží přes Vercel.
+- Kód je napojený na GitHub.
+- Produkční doména: https://flowlens.cz
+- Kontaktní e-mail: honza.vins@gmail.com
 
 ## Technologie
 
@@ -57,7 +60,6 @@ honza.vins@gmail.com
 - statická demo data v `data/demoData.ts`
 - bez backendu
 - bez API tokenů
-- připraveno pro Vercel
 
 ## Spuštění lokálně
 
@@ -81,17 +83,17 @@ npm run start
 
 ## Nasazení na Vercel
 
-1. Připojte GitHub repozitář `flowpulse-analytics`.
+1. Připojte GitHub repozitář.
 2. Ve Vercelu zvolte **Add New Project**.
 3. Vyberte framework preset **Next.js**.
 4. Build command ponechte `npm run build`.
 5. Install command ponechte `npm install`.
 6. Environment variables nejsou potřeba.
 
-Vercel URL:
+Produkční doména:
 
 ```text
-https://flowpulse-insight.vercel.app/
+https://flowlens.cz
 ```
 
 ## Jak projekt rozšířit
@@ -113,9 +115,3 @@ V budoucnu lze doplnit napojení na reálná data. Doporučený postup:
 - helpdesk
 - plánování práce
 - e-shop
-
-## GitHub
-
-```text
-https://github.com/janvins85/flowpulse-analytics
-```

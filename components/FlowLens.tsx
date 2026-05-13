@@ -10,7 +10,6 @@ import {
   Gauge,
   LineChart,
   PackageCheck,
-  Search,
   Target,
   TrendingUp,
   Users
@@ -29,7 +28,7 @@ const navItems = [
   { href: "#kontakt", label: "Kontakt" }
 ];
 
-const contactHref = "mailto:honza.vins@gmail.com?subject=FlowPulse%20Insight%20-%20nezávazná%20ukázka";
+const contactHref = "mailto:honza.vins@gmail.com?subject=FlowLens%20-%20nezávazná%20ukázka";
 
 const findingIcons: Record<string, LucideIcon> = {
   warehouse: PackageCheck,
@@ -161,7 +160,7 @@ function PriorityBadge({ priority }: { priority: string }) {
   return <span className={`rounded-full px-2.5 py-1 text-xs font-bold ${cls}`}>{priority}</span>;
 }
 
-export function FlowPulseInsight() {
+export function FlowLens() {
   const kpi = demoData.kpiSummary;
   const totalOpenTasks = demoData.people.reduce((sum, person) => sum + person.openTasks, 0);
   const totalRequestsAndTasks = totalOpenTasks + demoData.requests.openRequests;
@@ -176,7 +175,7 @@ export function FlowPulseInsight() {
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3 lg:px-8">
           <a href="#uvod" className="flex items-center gap-2 text-sm font-black text-white">
             <Gauge className="h-5 w-5 text-blue-300" />
-            FlowPulse Insight
+            FlowLens
           </a>
           <div className="hidden items-center gap-1 md:flex">
             {navItems.map((item) => (
@@ -199,13 +198,13 @@ export function FlowPulseInsight() {
               <Factory className="h-4 w-4" />
               {demoData.company} | {demoData.field}
             </div>
-            <h1 className="text-4xl font-black tracking-normal text-white md:text-6xl">FlowPulse Insight</h1>
-            <p className="mt-4 text-2xl font-semibold text-blue-100">Firemní rentgen z dat, která už máte</p>
+            <h1 className="text-4xl font-black tracking-normal text-white md:text-6xl">FlowLens</h1>
+            <p className="mt-4 text-2xl font-semibold text-blue-100">Firemní rentgen z dat, která už máte.</p>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
               Zjistěte během několika dní, kde vaše firma ztrácí čas, peníze a kapacitu lidí.
             </p>
             <p className="mt-3 max-w-2xl text-base leading-7 text-slate-300">
-              Bez složitých implementací. Bez výměny systémů.
+              Bez složitých implementací. Bez výměny systémů. Nad daty, která už používáte.
             </p>
             <p className="mt-5 max-w-2xl text-sm font-semibold text-slate-400">
               Možná vás překvapí, kde firma ztrácí nejvíc peněz.
@@ -216,12 +215,6 @@ export function FlowPulseInsight() {
                 className="inline-flex items-center gap-2 rounded-[7px] bg-blue-600 px-4 py-2.5 text-sm font-bold text-white hover:bg-blue-700"
               >
                 Zobrazit ukázku přehledu <ArrowRight className="h-4 w-4" />
-              </a>
-              <a
-                href="#zjisteni"
-                className="inline-flex items-center gap-2 rounded-[7px] border border-slate-600 px-4 py-2.5 text-sm font-bold text-slate-100 hover:bg-slate-800"
-              >
-                Co dokážeme odhalit <Search className="h-4 w-4" />
               </a>
               <a
                 href={contactHref}
@@ -271,6 +264,18 @@ export function FlowPulseInsight() {
               </div>
             </div>
           ))}
+        </div>
+      </Section>
+
+      <Section title="Co je FlowLens">
+        <div className="rounded-[8px] border border-slate-700 bg-slate-900 p-6">
+          <p className="text-lg leading-8 text-slate-200">
+            FlowLens není další systém, který musí lidé ve firmě složitě vyplňovat. Je to srozumitelný pohled nad daty,
+            která už ve firmě vznikají — z Excelu, CRM, účetního systému, skladu, helpdesku nebo jiných nástrojů.
+          </p>
+          <p className="mt-4 text-lg leading-8 text-slate-200">
+            Pomáhá vedení rychle pochopit, kde vznikají ztráty, zdržení, přetížení lidí a nejasnosti v odpovědnosti.
+          </p>
         </div>
       </Section>
 
@@ -567,7 +572,7 @@ export function FlowPulseInsight() {
       <section className="mx-auto max-w-7xl px-5 pb-14 lg:px-8">
         <div className="grid gap-5 lg:grid-cols-2">
           <div className="rounded-[8px] border border-slate-700 bg-slate-900 p-5">
-            <h3 className="text-xl font-black text-white">Co FlowPulse Insight není</h3>
+            <h3 className="text-xl font-black text-white">Co FlowLens není</h3>
             <div className="mt-4 grid gap-3 text-sm text-slate-300">
               {[
                 "Není to složitý korporátní reporting.",
@@ -583,7 +588,7 @@ export function FlowPulseInsight() {
             </div>
           </div>
           <div className="rounded-[8px] border border-slate-700 bg-slate-900 p-5">
-            <h3 className="text-xl font-black text-white">Co FlowPulse Insight je</h3>
+            <h3 className="text-xl font-black text-white">Co FlowLens je</h3>
             <div className="mt-4 grid gap-3 text-sm text-slate-300">
               {[
                 "Praktický firemní rentgen.",
@@ -605,20 +610,21 @@ export function FlowPulseInsight() {
         <div className="grid gap-5 lg:grid-cols-[1fr_0.9fr]">
           <div className="rounded-[8px] border border-slate-700 bg-slate-900 p-6">
             <p className="text-base leading-8 text-slate-200">
-              FlowPulse Insight stojí na zkušenostech s řízením projektů, optimalizací firemních procesů a praktickým
-              využitím dat pro manažerské rozhodování.
+              FlowLens stojí na praktických zkušenostech z projektového řízení, procesní analýzy a práce s firemními
+              daty. Zaměřuje se na to, aby vedení firmy získalo jasný a použitelný pohled na provoz, kapacity, slabá
+              místa a finanční dopady jednotlivých problémů.
             </p>
             <p className="mt-4 text-base leading-8 text-slate-200">
-              Nejde o další složitý systém, ale o způsob, jak z dostupných dat získat jasný přehled o fungování firmy,
-              odhalit slabá místa a podpořit konkrétní rozhodnutí s reálným dopadem.
+              Cílem není dodat další sadu grafů, ale vytvořit podklad pro konkrétní rozhodnutí — co změnit, v jakém
+              pořadí a s jakým očekávaným dopadem.
             </p>
           </div>
           <div className="grid gap-3">
             {[
-              "zkušenost s řízením IT a rozvojových projektů",
-              "praktická znalost firemních procesů",
-              "schopnost propojit data, provoz a manažerské rozhodování",
-              "zaměření na konkrétní dopady, ne jen na hezké grafy"
+              "propojení procesního pohledu a datové analytiky",
+              "srozumitelný výstup pro vedení firmy",
+              "důraz na finanční dopad a priority",
+              "praktická doporučení místo obecných reportů"
             ].map((item) => (
               <div key={item} className="flex items-start gap-3 rounded-[8px] border border-slate-700 bg-slate-900 p-4 text-slate-200">
                 <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-blue-300" />
@@ -631,9 +637,9 @@ export function FlowPulseInsight() {
 
       <section id="kontakt" className="border-y border-blue-400/20 bg-blue-500/10 px-5 py-12 text-center">
         <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-black text-white">Chcete zjistit, kde vaše firma ztrácí čas a peníze?</h2>
+          <h2 className="text-3xl font-black text-white">Chcete vidět FlowLens nad daty vaší firmy?</h2>
           <p className="mt-4 text-base leading-7 text-blue-100">
-            Ozvěte se mi a můžeme se nezávazně podívat, jestli má smysl připravit první firemní rentgen i pro vaši firmu.
+            Ozvěte se mi a můžeme se nezávazně podívat, jestli dává smysl připravit první firemní rentgen i pro vaši firmu.
           </p>
           <a
             href={contactHref}
@@ -641,11 +647,12 @@ export function FlowPulseInsight() {
           >
             Domluvit nezávaznou ukázku <ArrowRight className="h-4 w-4" />
           </a>
+          <div className="mt-4 text-sm text-blue-100">E-mail: honza.vins@gmail.com</div>
         </div>
       </section>
 
       <footer className="px-5 py-8 text-center text-sm text-slate-500">
-        FlowPulse Insight | Ukázková data | Excel / CSV, CRM, ERP, skladový systém, účetní systém, zákaznická podpora, plánování práce a e-shop.
+        FlowLens — Firemní rentgen z dat, která už máte. Kontakt: honza.vins@gmail.com. Doména: flowlens.cz
       </footer>
     </main>
   );
