@@ -303,42 +303,65 @@ export function FlowPulseInsight() {
         </div>
       </Section>
 
-      <Section id="lide" eyebrow="Dopad na provoz" title="Vytížení lidí a stav práce">
-        <div className="grid gap-5 lg:grid-cols-[0.8fr_1.2fr]">
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
+      <Section
+        id="lide"
+        eyebrow="Dopad na provoz"
+        title="Vytížení lidí a stav práce"
+        subtitle="Riziko musí být vidět hned. Proto je každý člověk zobrazený jako samostatná karta místo široké tabulky."
+      >
+        <div className="grid gap-5 xl:grid-cols-[360px_1fr]">
+          <div className="grid gap-3 sm:grid-cols-3 xl:grid-cols-1">
             <KpiCard label="Úkoly po termínu" value={formatNumber(demoData.processState.overdueTasks)} sub="napříč firmou" icon={Clock3} tone="red" />
             <KpiCard label="Bez odpovědné osoby" value={formatNumber(demoData.processState.requestsWithoutResponsiblePerson)} sub="požadavků a úkolů" icon={Users} tone="yellow" />
             <KpiCard label="Bez odhadu pracnosti" value={formatNumber(demoData.processState.workWithoutEstimate)} sub="vedení nevidí náročnost" icon={ClipboardList} tone="purple" />
           </div>
-          <div className="overflow-x-auto rounded-[8px] border border-slate-700 bg-slate-900">
-            <table className="w-full min-w-[820px] border-collapse text-sm">
-              <thead>
-                <tr className="border-b border-slate-700 text-left text-xs uppercase text-slate-400">
-                  <th className="py-3 pl-4 pr-4">Jméno</th>
-                  <th className="py-3 pr-4">Tým</th>
-                  <th className="py-3 pr-4">Role</th>
-                  <th className="py-3 pr-4">Plán</th>
-                  <th className="py-3 pr-4">Skutečné vytížení</th>
-                  <th className="py-3 pr-4">Otevřené úkoly</th>
-                  <th className="py-3 pr-4">Po termínu</th>
-                  <th className="py-3 pr-4">Riziko</th>
-                </tr>
-              </thead>
-              <tbody>
-                {demoData.people.map((person) => (
-                  <tr key={person.name} className="border-b border-slate-800 text-slate-300 last:border-0">
-                    <td className="py-3 pl-4 pr-4 font-bold text-white">{person.name}</td>
-                    <td className="py-3 pr-4">{person.team}</td>
-                    <td className="py-3 pr-4">{person.role}</td>
-                    <td className="py-3 pr-4">{formatNumber(person.plannedCapacity)} h</td>
-                    <td className="py-3 pr-4">{formatNumber(person.actualLoad)} h</td>
-                    <td className="py-3 pr-4">{person.openTasks}</td>
-                    <td className="py-3 pr-4">{person.overdueTasks}</td>
-                    <td className="py-3 pr-4"><RiskBadge level={person.risk} /></td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="grid gap-3 md:grid-cols-2">
+            {demoData.people.map((person) => {
+              const loadPercent = Math.round((person.actualLoad / person.plannedCapacity) * 100);
+
+              return (
+                <article key={person.name} className={`rounded-[8px] border p-4 risk-${person.risk}`}>
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <h3 className="text-base font-black text-white">{person.name}</h3>
+                      <p className="mt-1 text-sm text-slate-400">{person.team} | {person.role}</p>
+                    </div>
+                    <RiskBadge level={person.risk} />
+                  </div>
+
+                  <div className="mt-4">
+                    <div className="mb-1 flex items-center justify-between text-sm">
+                      <span className="text-slate-400">Vytížení proti plánu</span>
+                      <strong className="text-white">{loadPercent} %</strong>
+                    </div>
+                    <div className="h-2 overflow-hidden rounded-full bg-slate-800">
+                      <div
+                        className={`h-2 rounded-full ${person.risk === "vysoke" ? "bg-red-300" : person.risk === "stredni" ? "bg-amber-300" : "bg-emerald-300"}`}
+                        style={{ width: `${Math.min(loadPercent, 100)}%` }}
+                      />
+                    </div>
+                    <div className="mt-2 text-xs text-slate-500">
+                      Plán {formatNumber(person.plannedCapacity)} h | skutečnost {formatNumber(person.actualLoad)} h
+                    </div>
+                  </div>
+
+                  <div className="mt-4 grid grid-cols-3 gap-2 text-center">
+                    <div className="rounded-[7px] bg-slate-950/45 p-2">
+                      <div className="text-lg font-black text-white">{person.openTasks}</div>
+                      <div className="text-xs text-slate-400">Otevřené</div>
+                    </div>
+                    <div className="rounded-[7px] bg-slate-950/45 p-2">
+                      <div className="text-lg font-black text-red-200">{person.overdueTasks}</div>
+                      <div className="text-xs text-slate-400">Po termínu</div>
+                    </div>
+                    <div className="rounded-[7px] bg-slate-950/45 p-2">
+                      <div className="text-lg font-black text-amber-200">{person.tasksWithoutEstimate}</div>
+                      <div className="text-xs text-slate-400">Bez odhadu</div>
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </Section>
