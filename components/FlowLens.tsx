@@ -706,12 +706,11 @@ export function FlowLens() {
           >
             Domluvit nezávaznou ukázku <ArrowRight className="h-4 w-4" />
           </a>
-          <div className="mt-4 text-sm text-blue-100">E-mail: honza.vins@gmail.com</div>
         </div>
       </section>
 
       <footer className="px-5 py-8 text-center text-sm text-slate-500">
-        FlowLens — Firemní rentgen z dat, která už máte. Kontakt: honza.vins@gmail.com. Doména: flowlens.cz
+        FlowLens — Firemní rentgen z dat, která už máte. Doména: flowlens.cz
       </footer>
     </main>
   );
